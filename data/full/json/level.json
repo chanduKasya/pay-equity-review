@@ -1,0 +1,7 @@
+[
+{"level_id": "L1", "level_name": "Associate", "level_rank": 1, "mid_multiplier": 1.0},
+{"level_id": "L2", "level_name": "Intermediate", "level_rank": 2, "mid_multiplier": 1.3},
+{"level_id": "L3", "level_name": "Senior", "level_rank": 3, "mid_multiplier": 1.7},
+{"level_id": "L4", "level_name": "Lead", "level_rank": 4, "mid_multiplier": 2.2},
+{"level_id": "L5", "level_name": "Principal", "level_rank": 5, "mid_multiplier": 2.9}
+]

@@ -1,0 +1,66 @@
+group_id,grouping_basis,role_id,level_id,location_id,job_family,rationale,member_count
+GRP-2026-000001,ROLE_LEVEL,AEX,L3,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",6
+GRP-2026-000002,ROLE_LEVEL,BIA,L3,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",6
+GRP-2026-000003,ROLE_LEVEL,CMP,L2,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",8
+GRP-2026-000004,ROLE_LEVEL,CMP,L3,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",7
+GRP-2026-000005,ROLE_LEVEL,DVO,L2,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",6
+GRP-2026-000006,ROLE_LEVEL,EVT,L1,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",5
+GRP-2026-000007,ROLE_LEVEL,FAN,L3,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",5
+GRP-2026-000008,ROLE_LEVEL,HRB,L2,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",5
+GRP-2026-000009,ROLE_LEVEL,MLE,L1,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",5
+GRP-2026-000010,ROLE_LEVEL,PAN,L2,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",6
+GRP-2026-000011,ROLE_LEVEL,PDS,L3,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",6
+GRP-2026-000012,ROLE_LEVEL,PMG,L2,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",5
+GRP-2026-000013,ROLE_LEVEL,PMG,L3,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",5
+GRP-2026-000014,ROLE_LEVEL,PRC,L2,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",7
+GRP-2026-000015,ROLE_LEVEL,PRC,L4,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",5
+GRP-2026-000016,ROLE_LEVEL,PYS,L2,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",5
+GRP-2026-000017,ROLE_LEVEL,QAE,L4,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",7
+GRP-2026-000018,ROLE_LEVEL,SUP,L3,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",6
+GRP-2026-000019,ROLE_LEVEL,SWE,L2,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",6
+GRP-2026-000020,ROLE_LEVEL,UXR,L1,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",5
+GRP-2026-000021,ROLE_LEVEL,UXR,L3,,,"SMALL_GROUP_WIDENED: fewer than 5 active employees share this role, level and location",5
+GRP-2026-000022,FAMILY_LEVEL,,L1,,DATA,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,13
+GRP-2026-000023,FAMILY_LEVEL,,L2,,DATA,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,12
+GRP-2026-000024,FAMILY_LEVEL,,L3,,DATA,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,18
+GRP-2026-000025,FAMILY_LEVEL,,L4,,DATA,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,10
+GRP-2026-000026,FAMILY_LEVEL,,L5,,DATA,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,9
+GRP-2026-000027,FAMILY_LEVEL,,L1,,ENGINEERING,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,11
+GRP-2026-000028,FAMILY_LEVEL,,L2,,ENGINEERING,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,20
+GRP-2026-000029,FAMILY_LEVEL,,L3,,ENGINEERING,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,12
+GRP-2026-000030,FAMILY_LEVEL,,L4,,ENGINEERING,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,12
+GRP-2026-000031,FAMILY_LEVEL,,L5,,ENGINEERING,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,9
+GRP-2026-000032,FAMILY_LEVEL,,L1,,FINANCE,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,8
+GRP-2026-000033,FAMILY_LEVEL,,L2,,FINANCE,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,8
+GRP-2026-000034,FAMILY_LEVEL,,L3,,FINANCE,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,14
+GRP-2026-000035,FAMILY_LEVEL,,L4,,FINANCE,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,10
+GRP-2026-000036,FAMILY_LEVEL,,L5,,FINANCE,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,10
+GRP-2026-000037,FAMILY_LEVEL,,L1,,MARKETING,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,10
+GRP-2026-000038,FAMILY_LEVEL,,L2,,MARKETING,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,11
+GRP-2026-000039,FAMILY_LEVEL,,L3,,MARKETING,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,12
+GRP-2026-000040,FAMILY_LEVEL,,L4,,MARKETING,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,11
+GRP-2026-000041,FAMILY_LEVEL,,L5,,MARKETING,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,9
+GRP-2026-000042,FAMILY_LEVEL,,L1,,OPERATIONS,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,7
+GRP-2026-000043,FAMILY_LEVEL,,L2,,OPERATIONS,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,15
+GRP-2026-000044,FAMILY_LEVEL,,L3,,OPERATIONS,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,13
+GRP-2026-000045,FAMILY_LEVEL,,L4,,OPERATIONS,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,12
+GRP-2026-000046,FAMILY_LEVEL,,L5,,OPERATIONS,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,9
+GRP-2026-000047,FAMILY_LEVEL,,L1,,PEOPLE,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,9
+GRP-2026-000048,FAMILY_LEVEL,,L2,,PEOPLE,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,18
+GRP-2026-000049,FAMILY_LEVEL,,L3,,PEOPLE,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,17
+GRP-2026-000050,FAMILY_LEVEL,,L4,,PEOPLE,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,8
+GRP-2026-000051,FAMILY_LEVEL,,L5,,PEOPLE,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,7
+GRP-2026-000052,FAMILY_LEVEL,,L1,,PRODUCT,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,13
+GRP-2026-000053,FAMILY_LEVEL,,L2,,PRODUCT,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,17
+GRP-2026-000054,FAMILY_LEVEL,,L3,,PRODUCT,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,21
+GRP-2026-000055,FAMILY_LEVEL,,L4,,PRODUCT,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,5
+GRP-2026-000056,FAMILY_LEVEL,,L5,,PRODUCT,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,9
+GRP-2026-000057,FAMILY_LEVEL,,L1,,SALES,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,9
+GRP-2026-000058,FAMILY_LEVEL,,L2,,SALES,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,13
+GRP-2026-000059,FAMILY_LEVEL,,L3,,SALES,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,17
+GRP-2026-000060,FAMILY_LEVEL,,L4,,SALES,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,12
+GRP-2026-000061,FAMILY_LEVEL,,L5,,SALES,SMALL_GROUP_WIDENED_TO_FAMILY: fewer than 5 active employees share this role and level,8
+GRP-2026-000062,CUSTOM,,,,,CROSS_FUNCTIONAL_COHORT: mixed group approved by HR for a documented project-pay study,6
+GRP-2026-000063,CUSTOM,,,,,,6
+GRP-2026-000064,CUSTOM,,,,,,8
+GRP-2026-000065,CUSTOM,,,,,,6

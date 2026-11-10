@@ -1,0 +1,9 @@
+location_id,city,country,currency_code,geo_factor
+BLR,Bengaluru,India,INR,0.3
+HYD,Hyderabad,India,INR,0.28
+NYC,New York,United States,USD,1.0
+SFO,San Francisco,United States,USD,1.1
+LON,London,United Kingdom,GBP,0.85
+BER,Berlin,Germany,EUR,0.75
+DUB,Dublin,Ireland,EUR,0.8
+SGP,Singapore,Singapore,SGD,0.8

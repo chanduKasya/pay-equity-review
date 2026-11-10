@@ -1,0 +1,10 @@
+[
+{"location_id": "BLR", "city": "Bengaluru", "country": "India", "currency_code": "INR", "geo_factor": 0.3},
+{"location_id": "HYD", "city": "Hyderabad", "country": "India", "currency_code": "INR", "geo_factor": 0.28},
+{"location_id": "NYC", "city": "New York", "country": "United States", "currency_code": "USD", "geo_factor": 1.0},
+{"location_id": "SFO", "city": "San Francisco", "country": "United States", "currency_code": "USD", "geo_factor": 1.1},
+{"location_id": "LON", "city": "London", "country": "United Kingdom", "currency_code": "GBP", "geo_factor": 0.85},
+{"location_id": "BER", "city": "Berlin", "country": "Germany", "currency_code": "EUR", "geo_factor": 0.75},
+{"location_id": "DUB", "city": "Dublin", "country": "Ireland", "currency_code": "EUR", "geo_factor": 0.8},
+{"location_id": "SGP", "city": "Singapore", "country": "Singapore", "currency_code": "SGD", "geo_factor": 0.8}
+]

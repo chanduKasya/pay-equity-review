@@ -1,0 +1,41 @@
+role_id,role_name,job_family,base_mid_usd
+SWE,Software Engineer,ENGINEERING,70000
+QAE,QA Engineer,ENGINEERING,58000
+DVO,DevOps Engineer,ENGINEERING,72000
+DTE,Data Engineer,ENGINEERING,74000
+SEC,Security Engineer,ENGINEERING,76000
+DSC,Data Scientist,DATA,78000
+DAN,Data Analyst,DATA,60000
+MLE,Machine Learning Engineer,DATA,82000
+BIA,BI Analyst,DATA,58000
+RSC,Research Scientist,DATA,85000
+PMG,Product Manager,PRODUCT,80000
+PDS,Product Designer,PRODUCT,68000
+UXR,UX Researcher,PRODUCT,66000
+TPM,Technical Program Manager,PRODUCT,78000
+PAN,Product Analyst,PRODUCT,62000
+AEX,Account Executive,SALES,60000
+SDR,Sales Development Representative,SALES,45000
+SEN,Sales Engineer,SALES,70000
+AMG,Account Manager,SALES,58000
+SOP,Sales Operations Analyst,SALES,55000
+MKM,Marketing Manager,MARKETING,62000
+CNT,Content Strategist,MARKETING,52000
+GRW,Growth Marketer,MARKETING,60000
+BRD,Brand Designer,MARKETING,54000
+EVT,Events Coordinator,MARKETING,46000
+FAN,Financial Analyst,FINANCE,60000
+ACC,Accountant,FINANCE,52000
+PYS,Payroll Specialist,FINANCE,48000
+TAX,Tax Analyst,FINANCE,58000
+AUD,Internal Auditor,FINANCE,60000
+HRB,HR Business Partner,PEOPLE,60000
+REC,Recruiter,PEOPLE,52000
+CMP,Compensation Analyst,PEOPLE,60000
+LND,Learning Specialist,PEOPLE,52000
+HRO,HR Operations Specialist,PEOPLE,46000
+CSM,Customer Success Manager,OPERATIONS,56000
+SUP,Support Specialist,OPERATIONS,42000
+ITA,IT Administrator,OPERATIONS,54000
+PRC,Procurement Specialist,OPERATIONS,52000
+FAC,Facilities Coordinator,OPERATIONS,42000
