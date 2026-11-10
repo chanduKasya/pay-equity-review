@@ -31,3 +31,5 @@ All times are IST on 2026-11-10 unless a new date heading appears.
 | 10 | 14:04 | "all done until now , take control , and do everything from now , and teach me what you did at the end" |
 | 11 | 14:28 | "how to run it" |
 | 12 | 14:29 | Pasted terminal output of `python3 src/run_all.py --scale full` from my Mac |
+| 13 | 14:32 | "how to run it on VS code" |
+| 14 | 14:44 | Pasted terminal output: `pip3 install pytest` failed with "externally-managed-environment" |

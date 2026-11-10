@@ -52,9 +52,14 @@ also be run alone:
 Optional tests (23 tests, about one second):
 
 ```
-pip3 install pytest
-python3 -m pytest
+python3 -m venv .venv
+source .venv/bin/activate
+pip install pytest
+python -m pytest
 ```
+
+The virtual environment is needed on systems where Python is managed by the
+operating system or Homebrew, which refuse a plain `pip install`.
 
 ## How to verify the key behaviour
 
@@ -193,6 +198,6 @@ More detail is in `docs/design_decisions.md`.
 
 ## Environment
 
-Run and checked on Python 3.10 and 3.13 on Linux and on Python 3.14 on
+Run and checked on Python 3.10 and 3.13 on Linux and on Python 3.15 on
 macOS (Apple M1). All three produce identical checksums. Data files use `\n` line endings on every
 platform.
