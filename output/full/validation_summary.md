@@ -1,0 +1,121 @@
+# Validation summary (full)
+
+101 of 101 checks passed.
+
+| Category | Passed | Total |
+|---|---|---|
+| Primary keys | 14 | 14 |
+| Foreign keys | 25 | 25 |
+| Allowed values | 11 | 11 |
+| ID formats | 10 | 10 |
+| Date ordering | 7 | 7 |
+| Arithmetic | 7 | 7 |
+| Lifecycle | 3 | 3 |
+| Duplicates | 17 | 17 |
+| Ground truth | 3 | 3 |
+| Coverage | 2 | 2 |
+| Exports | 2 | 2 |
+
+| Category | Check | Status | Records checked | Problems |
+|---|---|---|---|---|
+| Primary keys | role: key is unique and not empty | PASS | 40 | 0 |
+| Primary keys | level: key is unique and not empty | PASS | 5 | 0 |
+| Primary keys | location: key is unique and not empty | PASS | 8 | 0 |
+| Primary keys | fx_rate: key is unique and not empty | PASS | 15 | 0 |
+| Primary keys | compensation_band: key is unique and not empty | PASS | 4800 | 0 |
+| Primary keys | employee: key is unique and not empty | PASS | 5000 | 0 |
+| Primary keys | salary_record: key is unique and not empty | PASS | 18617 | 0 |
+| Primary keys | performance_evidence: key is unique and not empty | PASS | 11791 | 0 |
+| Primary keys | promotion: key is unique and not empty | PASS | 1225 | 0 |
+| Primary keys | tenure: key is unique and not empty | PASS | 5000 | 0 |
+| Primary keys | comparable_group: key is unique and not empty | PASS | 523 | 0 |
+| Primary keys | comparable_group_member: key is unique and not empty | PASS | 6657 | 0 |
+| Primary keys | adjustment_proposal: key is unique and not empty | PASS | 435 | 0 |
+| Primary keys | proposal_event: key is unique and not empty | PASS | 1704 | 0 |
+| Foreign keys | compensation_band.role_id -> role.role_id | PASS | 4800 | 0 |
+| Foreign keys | compensation_band.level_id -> level.level_id | PASS | 4800 | 0 |
+| Foreign keys | compensation_band.location_id -> location.location_id | PASS | 4800 | 0 |
+| Foreign keys | employee.manager_employee_id -> employee.employee_id | PASS | 4607 | 0 |
+| Foreign keys | salary_record.employee_id -> employee.employee_id | PASS | 18617 | 0 |
+| Foreign keys | salary_record.role_id -> role.role_id | PASS | 18617 | 0 |
+| Foreign keys | salary_record.level_id -> level.level_id | PASS | 18617 | 0 |
+| Foreign keys | salary_record.location_id -> location.location_id | PASS | 18617 | 0 |
+| Foreign keys | salary_record.band_id -> compensation_band.band_id | PASS | 18617 | 0 |
+| Foreign keys | salary_record.proposal_id -> adjustment_proposal.proposal_id | PASS | 252 | 0 |
+| Foreign keys | performance_evidence.employee_id -> employee.employee_id | PASS | 11791 | 0 |
+| Foreign keys | promotion.employee_id -> employee.employee_id | PASS | 1225 | 0 |
+| Foreign keys | promotion.from_level_id -> level.level_id | PASS | 1225 | 0 |
+| Foreign keys | promotion.to_level_id -> level.level_id | PASS | 1225 | 0 |
+| Foreign keys | promotion.salary_record_id -> salary_record.salary_record_id | PASS | 1225 | 0 |
+| Foreign keys | tenure.employee_id -> employee.employee_id | PASS | 5000 | 0 |
+| Foreign keys | comparable_group.role_id -> role.role_id | PASS | 505 | 0 |
+| Foreign keys | comparable_group.level_id -> level.level_id | PASS | 505 | 0 |
+| Foreign keys | comparable_group.location_id -> location.location_id | PASS | 305 | 0 |
+| Foreign keys | comparable_group_member.group_id -> comparable_group.group_id | PASS | 6657 | 0 |
+| Foreign keys | comparable_group_member.employee_id -> employee.employee_id | PASS | 6657 | 0 |
+| Foreign keys | adjustment_proposal.employee_id -> employee.employee_id | PASS | 435 | 0 |
+| Foreign keys | adjustment_proposal.group_id -> comparable_group.group_id | PASS | 435 | 0 |
+| Foreign keys | adjustment_proposal.basis_salary_record_id -> salary_record.salary_record_id | PASS | 435 | 0 |
+| Foreign keys | proposal_event.proposal_id -> adjustment_proposal.proposal_id | PASS | 1704 | 0 |
+| Allowed values | location.currency_code | PASS | 8 | 0 |
+| Allowed values | employee.employment_status | PASS | 5000 | 0 |
+| Allowed values | salary_record.change_reason | PASS | 18617 | 0 |
+| Allowed values | salary_record.fte | PASS | 18617 | 0 |
+| Allowed values | performance_evidence.evidence_type | PASS | 11791 | 0 |
+| Allowed values | comparable_group.grouping_basis | PASS | 523 | 0 |
+| Allowed values | adjustment_proposal.status | PASS | 435 | 0 |
+| Allowed values | proposal_event.to_status | PASS | 1704 | 0 |
+| Allowed values | proposal_event.actor_role | PASS | 1704 | 0 |
+| Allowed values | performance_evidence: rating 1-5 or premium 5-20 by type | PASS | 11791 | 0 |
+| Allowed values | salary_record: positive amount, proposal only on ADJUSTMENT | PASS | 18617 | 0 |
+| ID formats | employee.employee_id | PASS | 5000 | 0 |
+| ID formats | compensation_band.band_id | PASS | 4800 | 0 |
+| ID formats | salary_record.salary_record_id | PASS | 18617 | 0 |
+| ID formats | performance_evidence.evidence_id | PASS | 11791 | 0 |
+| ID formats | promotion.promotion_id | PASS | 1225 | 0 |
+| ID formats | comparable_group.group_id | PASS | 523 | 0 |
+| ID formats | adjustment_proposal.proposal_id | PASS | 435 | 0 |
+| ID formats | proposal_event.event_id | PASS | 1704 | 0 |
+| ID formats | compensation_band: ID parts equal role, level, location, year | PASS | 4800 | 0 |
+| ID formats | salary_record: ID parts equal employee and effective year | PASS | 18617 | 0 |
+| Date ordering | compensation_band: effective_from before effective_to | PASS | 4800 | 0 |
+| Date ordering | compensation_band: no overlapping bands for one job | PASS | 4800 | 0 |
+| Date ordering | employee: termination after hire, status consistent | PASS | 5000 | 0 |
+| Date ordering | salary_record: valid first record, strictly increasing dates | PASS | 18617 | 0 |
+| Date ordering | employee: every employee has at least one salary record | PASS | 5000 | 0 |
+| Date ordering | performance_evidence: on or after hire, year matches date | PASS | 11791 | 0 |
+| Date ordering | salary_record: band covers the effective date (except labelled EXPIRED_BAND) | PASS | 18617 | 0 |
+| Arithmetic | compensation_band: min = 80% and max = 120% of midpoint, local currency | PASS | 4800 | 0 |
+| Arithmetic | salary_record: recorded compa-ratio reconciles (except labelled records) | PASS | 18617 | 0 |
+| Arithmetic | tenure: months recomputed from hire date and promotions | PASS | 5000 | 0 |
+| Arithmetic | promotion: one level up, matches exactly one PROMOTION salary record | PASS | 1225 | 0 |
+| Arithmetic | comparable_group: member_count equals bridge rows, size and rationale rules | PASS | 523 | 0 |
+| Arithmetic | adjustment_proposal: ratios, increase % and band cap recomputed from sources | PASS | 435 | 0 |
+| Arithmetic | salary_record: ADJUSTMENT amount equals proposal, one per APPLIED proposal | PASS | 252 | 0 |
+| Lifecycle | proposal_event: sequence, dates and status chain are consistent | PASS | 1704 | 0 |
+| Lifecycle | proposal_event: only allowed transitions (except labelled UNAPPROVED_ADJUSTMENT) | PASS | 1704 | 0 |
+| Lifecycle | adjustment_proposal: approvals and rejections follow the documented rules | PASS | 435 | 0 |
+| Duplicates | role: no fully identical rows | PASS | 40 | 0 |
+| Duplicates | level: no fully identical rows | PASS | 5 | 0 |
+| Duplicates | location: no fully identical rows | PASS | 8 | 0 |
+| Duplicates | fx_rate: no fully identical rows | PASS | 15 | 0 |
+| Duplicates | compensation_band: no fully identical rows | PASS | 4800 | 0 |
+| Duplicates | employee: no fully identical rows | PASS | 5000 | 0 |
+| Duplicates | salary_record: no fully identical rows | PASS | 18617 | 0 |
+| Duplicates | performance_evidence: no fully identical rows | PASS | 11791 | 0 |
+| Duplicates | promotion: no fully identical rows | PASS | 1225 | 0 |
+| Duplicates | tenure: no fully identical rows | PASS | 5000 | 0 |
+| Duplicates | comparable_group: no fully identical rows | PASS | 523 | 0 |
+| Duplicates | comparable_group_member: no fully identical rows | PASS | 6657 | 0 |
+| Duplicates | adjustment_proposal: no fully identical rows | PASS | 435 | 0 |
+| Duplicates | proposal_event: no fully identical rows | PASS | 1704 | 0 |
+| Duplicates | performance_evidence: one annual rating per employee per year | PASS | 11637 | 0 |
+| Duplicates | salary_record: one record per employee per date | PASS | 18617 | 0 |
+| Duplicates | adjustment_proposal: one proposal per employee per review | PASS | 435 | 0 |
+| Ground truth | no label columns or label files among the inputs | PASS | 91 | 0 |
+| Ground truth | every label points to one existing record, one label per record | PASS | 259 | 0 |
+| Ground truth | INCOMPARABLE_GROUP labels match groups with no rationale | PASS | 523 | 0 |
+| Coverage | 200 role/level combinations, employee count, three years of history | PASS | 4 | 0 |
+| Coverage | promotions, part-time, currency changes, all statuses and all edge cases present | PASS | 18617 | 0 |
+| Exports | SQL seed loads into SQLite, row counts match CSV, database FK check is clean | PASS | 14 | 0 |
+| Exports | JSON files parse and row counts match CSV | PASS | 14 | 0 |
