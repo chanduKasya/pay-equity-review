@@ -1,0 +1,30 @@
+ground_truth_id,issue_type,table_name,record_id,employee_id,expected_decision,detail
+GT-000001,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000062-2026-01,EMP-000062,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000002,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000068-2026-01,EMP-000068,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000003,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000124-2026-01,EMP-000124,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000004,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000234-2026-01,EMP-000234,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000005,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000235-2026-02,EMP-000235,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000006,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000244-2026-01,EMP-000244,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000007,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000319-2026-01,EMP-000319,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000008,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000395-2026-01,EMP-000395,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000009,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000399-2026-01,EMP-000399,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000010,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000408-2026-01,EMP-000408,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000011,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000421-2026-01,EMP-000421,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000012,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000489-2026-01,EMP-000489,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000013,EXPIRED_BAND,salary_record,SAL-EMP-000238-2026-01,EMP-000238,RECALCULATE,Compared against BAND-PMG-L1-DUB-2025 which expired on 2025-12-31
+GT-000014,EXPIRED_BAND,salary_record,SAL-EMP-000463-2025-01,EMP-000463,RECALCULATE,Compared against BAND-PAN-L2-NYC-2024 which expired on 2024-12-31
+GT-000015,EXPIRED_BAND,salary_record,SAL-EMP-000065-2026-01,EMP-000065,RECALCULATE,Compared against BAND-UXR-L5-SGP-2025 which expired on 2025-12-31
+GT-000016,EXPIRED_BAND,salary_record,SAL-EMP-000417-2025-01,EMP-000417,RECALCULATE,Compared against BAND-LND-L2-BER-2024 which expired on 2024-12-31
+GT-000017,FTE_IGNORED,salary_record,SAL-EMP-000213-2026-01,EMP-000213,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
+GT-000018,FTE_IGNORED,salary_record,SAL-EMP-000215-2025-01,EMP-000215,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000019,FTE_IGNORED,salary_record,SAL-EMP-000348-2024-03,EMP-000348,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000020,FTE_IGNORED,salary_record,SAL-EMP-000133-2025-01,EMP-000133,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
+GT-000021,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000491-2026-02,EMP-000491,RECALCULATE,Salary in SGD divided by a INR band midpoint without conversion
+GT-000022,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000433-2024-03,EMP-000433,RECALCULATE,Salary in EUR divided by a INR band midpoint without conversion
+GT-000023,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000162-2025-02,EMP-000162,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
+GT-000024,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-000014-2026-02,EMP-000014,REVERSE_OR_RATIFY,Proposal ADJ-2026-000003 was applied with no APPROVED event
+GT-000025,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-000031-2026-02,EMP-000031,REVERSE_OR_RATIFY,Proposal ADJ-2026-000004 was applied with no APPROVED event
+GT-000026,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-000282-2026-03,EMP-000282,REVERSE_OR_RATIFY,Proposal ADJ-2026-000027 was applied with no APPROVED event
+GT-000027,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000063,,REGROUP,Employees from OPERATIONS and PRODUCT grouped together with no rationale
+GT-000028,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000064,,REGROUP,Employees from ENGINEERING and PEOPLE grouped together with no rationale
+GT-000029,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000065,,REGROUP,Employees from ENGINEERING and MARKETING grouped together with no rationale
