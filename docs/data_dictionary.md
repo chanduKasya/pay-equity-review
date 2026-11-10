@@ -14,7 +14,7 @@ Conventions used in every table:
 | Role | CompensationBand | 1:N | |
 | Level | CompensationBand | 1:N | |
 | Location | CompensationBand | 1:N | |
-| Employee | SalaryRecord | 1:N | At least one (the HIRE record) |
+| Employee | SalaryRecord | 1:N | At least one (the HIRE or OPENING_BALANCE record) |
 | CompensationBand | SalaryRecord | 1:N | The band the source system compared against |
 | Employee | PerformanceEvidence | 1:N | Optional: new hires may have none |
 | Employee | Promotion | 1:N | Optional |
@@ -103,7 +103,7 @@ ID format: `SAL-<employee-id>-<year>-<seq>`, e.g. `SAL-EMP-000001-2026-01`.
 |---|---|---|---|
 | salary_record_id | text | Y | PK |
 | employee_id | text | Y | FK to Employee |
-| effective_date | date | Y | On or after hire_date. Strictly later than the employee's previous record |
+| effective_date | date | Y | On or after hire_date and 2024-01-01. Strictly later than the employee's previous record |
 | role_id | text | Y | FK to Role |
 | level_id | text | Y | FK to Level |
 | location_id | text | Y | FK to Location |
@@ -111,11 +111,11 @@ ID format: `SAL-<employee-id>-<year>-<seq>`, e.g. `SAL-EMP-000001-2026-01`.
 | currency_code | text | Y | Currency the salary is paid in |
 | fte | decimal | Y | 0.50, 0.60, 0.80 or 1.00 |
 | annual_amount | integer | Y | > 0. Actual pay per year at this FTE, in currency_code |
-| change_reason | text | Y | `HIRE`, `ANNUAL_REVIEW`, `PROMOTION`, `FTE_CHANGE`, `RELOCATION`, `ADJUSTMENT` |
+| change_reason | text | Y | `OPENING_BALANCE`, `HIRE`, `ANNUAL_REVIEW`, `PROMOTION`, `FTE_CHANGE`, `RELOCATION`, `ADJUSTMENT` |
 | proposal_id | text | N | FK to AdjustmentProposal. Required only when change_reason is ADJUSTMENT |
 | recorded_compa_ratio | decimal | Y | 4 decimal places. As calculated by the source system |
 
-Rules: the first record per employee has change_reason HIRE and effective_date = hire_date.
+Rules: the first record per employee is HIRE on the hire date (hired in 2024 or later) or OPENING_BALANCE on 2024-01-01 (hired earlier). The currency can differ from the band's currency after a relocation; the compa-ratio calculation converts it.
 
 ## PerformanceEvidence (event)
 
@@ -151,8 +151,8 @@ ID format: `PROMO-<employee-id>-<seq>`.
 | Field | Type | Req | Allowed values / rule |
 |---|---|---|---|
 | employee_id | text | Y | PK. FK to Employee |
-| as_of_date | date | Y | The snapshot date, 2026-12-01 |
-| company_tenure_months | integer | Y | Whole months from hire_date to as_of_date (or termination_date) |
+| as_of_date | date | Y | The snapshot date, 2026-12-01, or the termination date for employees who left |
+| company_tenure_months | integer | Y | Whole months from hire_date to as_of_date |
 | level_tenure_months | integer | Y | Whole months since the latest promotion, or since hire. Never more than company_tenure_months |
 
 ## ComparableGroup
@@ -162,10 +162,11 @@ ID format: `GRP-2026-000001`.
 | Field | Type | Req | Allowed values / rule |
 |---|---|---|---|
 | group_id | text | Y | PK |
-| grouping_basis | text | Y | `ROLE_LEVEL_LOCATION`, `ROLE_LEVEL`, `CUSTOM` |
-| role_id | text | N | FK to Role. Empty only for CUSTOM |
+| grouping_basis | text | Y | `ROLE_LEVEL_LOCATION`, `ROLE_LEVEL`, `FAMILY_LEVEL`, `CUSTOM` |
+| role_id | text | N | FK to Role. Filled for ROLE_LEVEL_LOCATION and ROLE_LEVEL |
 | level_id | text | N | FK to Level. Empty only for CUSTOM |
 | location_id | text | N | FK to Location. Filled only for ROLE_LEVEL_LOCATION |
+| job_family | text | N | Filled only for FAMILY_LEVEL |
 | rationale | text | N | Required whenever the basis is not ROLE_LEVEL_LOCATION |
 | member_count | integer | Y | Must equal the number of bridge rows for this group |
 
@@ -183,10 +184,10 @@ ID format: `ADJ-2026-000001`.
 | Field | Type | Req | Allowed values / rule |
 |---|---|---|---|
 | proposal_id | text | Y | PK |
-| employee_id | text | Y | FK to Employee. Must be ACTIVE |
+| employee_id | text | Y | FK to Employee. Must be ACTIVE. One proposal per employee per review |
 | group_id | text | Y | FK to ComparableGroup. The employee must be a member |
 | basis_salary_record_id | text | Y | FK to SalaryRecord. The employee's latest record at creation |
-| created_date | date | Y | On or after 2026-12-01 |
+| created_date | date | Y | On or after 2026-12-01. Equals the date of the first event |
 | current_compa_ratio | decimal | Y | Recomputed correctly from source records |
 | group_median_compa_ratio | decimal | Y | Median of the group, as evidence |
 | target_compa_ratio | decimal | Y | Greater than current_compa_ratio |
