@@ -48,3 +48,4 @@ Checks I ran myself, on my own machine:
 | Date | What I checked | Result |
 |---|---|---|
 | 2026-11-10 | Ran the stage 1 generator on my Mac | 40 roles, 5 levels, 8 locations, 15 FX rates, 4,800 bands, 200 role/level combinations |
+| 2026-11-10 | Ran `python3 src/run_all.py --scale full` on my Mac (M1, Python 3.14) | 101 of 101 checks passed, same evaluation table as the README, and 32 of 32 files matched the saved checksums |

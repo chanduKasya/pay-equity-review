@@ -193,6 +193,6 @@ More detail is in `docs/design_decisions.md`.
 
 ## Environment
 
-Run and checked on Python 3.10 and 3.13 on Linux, where both versions
-produce identical checksums. Data files use `\n` line endings on every
+Run and checked on Python 3.10 and 3.13 on Linux and on Python 3.14 on
+macOS (Apple M1). All three produce identical checksums. Data files use `\n` line endings on every
 platform.

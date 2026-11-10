@@ -29,3 +29,5 @@ All times are IST on 2026-11-10 unless a new date heading appears.
 | 8 | 12:07 | "before continuing tell me about the project , what they asked , what are we doing, etc and tell me whats in assumptions , data dictionary,  like i am 10." |
 | 9 | 12:19 | "pushed , and done" |
 | 10 | 14:04 | "all done until now , take control , and do everything from now , and teach me what you did at the end" |
+| 11 | 14:28 | "how to run it" |
+| 12 | 14:29 | Pasted terminal output of `python3 src/run_all.py --scale full` from my Mac |
