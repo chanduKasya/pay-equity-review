@@ -1,0 +1,6 @@
+level_id,level_name,level_rank,mid_multiplier
+L1,Associate,1,1.0
+L2,Intermediate,2,1.3
+L3,Senior,3,1.7
+L4,Lead,4,2.2
+L5,Principal,5,2.9
