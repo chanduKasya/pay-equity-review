@@ -1,2 +1,3 @@
-pandas
+# The project itself needs only the Python standard library (Python 3.10+).
+# pytest is optional and only used to run the tests in the tests folder.
 pytest
