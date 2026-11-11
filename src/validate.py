@@ -31,6 +31,7 @@ import schema
 ENUMS = {
     ("location", "currency_code"): ["INR", "USD", "GBP", "EUR", "SGD"],
     ("employee", "employment_status"): ["ACTIVE", "TERMINATED"],
+    ("demographics", "demographic_group"): config.DEMOGRAPHIC_GROUPS,
     ("salary_record", "change_reason"): ["OPENING_BALANCE", "HIRE", "ANNUAL_REVIEW", "PROMOTION",
                                           "FTE_CHANGE", "RELOCATION", "ADJUSTMENT"],
     ("salary_record", "fte"): ["0.50", "0.60", "0.80", "1.00"],
@@ -574,7 +575,8 @@ def check_ground_truth(tables, ground_truth, csv_folder, report):
     report.add("Ground truth", "no label columns or label files among the inputs", checked, problems)
 
     ids_by_table = {}
-    for table_name, key_column in [("salary_record", "salary_record_id"), ("comparable_group", "group_id")]:
+    for table_name, key_column in [("salary_record", "salary_record_id"), ("comparable_group", "group_id"),
+                                   ("role", "role_id")]:
         ids_by_table[table_name] = set(row[key_column] for row in tables[table_name])
     problems = []
     seen = set()
@@ -643,8 +645,22 @@ def check_coverage(tables, ground_truth, expected_employees, report):
                        "INCOMPARABLE_GROUP", "UNEXPLAINED_OUTLIER_LOW", "UNEXPLAINED_OUTLIER_HIGH"]:
         if issue_type not in labelled:
             problems.append("no labelled case of " + issue_type)
+    expected_systemic = int(round(config.INJECT_SYSTEMIC_ROLES[0] * expected_employees / 5000.0))
+    if expected_systemic > 0 and "SYSTEMIC_DISPARITY" not in labelled:
+        problems.append("no labelled case of SYSTEMIC_DISPARITY")
     report.add("Coverage", "promotions, part-time, currency changes, all statuses and all edge cases present",
                len(tables["salary_record"]), problems)
+
+    problems = []
+    with_group = set(row["employee_id"] for row in tables["demographics"])
+    for employee in tables["employee"]:
+        if employee["employee_id"] not in with_group:
+            problems.append(employee["employee_id"] + " has no demographics row")
+    groups_seen = set(row["demographic_group"] for row in tables["demographics"])
+    if len(groups_seen) < 2:
+        problems.append("only one demographic group is present")
+    report.add("Coverage", "demographics: one row for every employee, both groups present",
+               len(tables["employee"]), problems)
 
 
 def check_sql_seed(tables, sql_folder, report):

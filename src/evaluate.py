@@ -108,6 +108,10 @@ def threshold_sweep(metric_rows, ground_truth):
     for threshold in [0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.12]:
         flagged = set()
         for row in metric_rows:
+            # Same rule as the detector: a person inside a systemic finding
+            # is not also counted as an individual low outlier.
+            if row.get("in_systemic_finding", "") == "YES" and float(row["residual"]) < 0:
+                continue
             if abs(float(row["residual"])) > threshold:
                 flagged.add(row["salary_record_id"])
         result = score(flagged, truth_records)

@@ -10,6 +10,7 @@ It recomputes every metric from source records and reports:
   UNAPPROVED_ADJUSTMENT    adjustment applied with no APPROVED event
   INCOMPARABLE_GROUP       mixed jobs grouped with no rationale
   UNEXPLAINED_OUTLIER_LOW / _HIGH   pay far from what documented factors predict
+  SYSTEMIC_DISPARITY       one demographic group paid less across a role's levels
 
 The expected pay is NOT taken from the generator's formula. It is estimated
 from the data by a regression (see policy_fit.py).
@@ -36,6 +37,7 @@ ACTION = {
     "INCOMPARABLE_GROUP": "REGROUP",
     "UNEXPLAINED_OUTLIER_LOW": "PROPOSE_INCREASE",
     "UNEXPLAINED_OUTLIER_HIGH": "FLAG_FOR_REVIEW",
+    "SYSTEMIC_DISPARITY": "GROUP_PAY_REVIEW",
 }
 
 BASIS_ORDER = {"ROLE_LEVEL_LOCATION": 1, "ROLE_LEVEL": 2, "FAMILY_LEVEL": 3, "CUSTOM": 4}
@@ -141,6 +143,89 @@ def check_groups(tables, snapshot_by_employee, findings):
                         + ", ".join(sorted(level_ids)) + " but has no rationale")
 
 
+def check_systemic(tables, snapshot, findings):
+    """Compare the demographic groups inside each role, level by level.
+
+    For one role and one level, take the median compa-ratio of each group.
+    The level "shows a gap" when one group's median is at least 5% below the
+    other's. A role is flagged when the SAME group is lower at 3 or more of
+    its levels, and at 75% or more of the levels that had enough people. One level on its own proves little, because small groups
+    differ by chance; the same gap at several levels is a pattern.
+
+    Returns (rows for the gap report, set of employee IDs covered by a finding).
+    """
+    group_of = {}
+    for row in tables["demographics"]:
+        group_of[row["employee_id"]] = row["demographic_group"]
+    group_names = sorted(set(group_of.values()))
+
+    # (role, level) -> group -> list of compa-ratios
+    ratios = {}
+    for person in snapshot:
+        key = (person["role_id"], person["level_id"])
+        group = group_of[person["employee_id"]]
+        ratios.setdefault(key, {}).setdefault(group, []).append(person["compa_ratio"])
+
+    gap_rows = []
+    lower_levels = {}     # (role, lower group) -> list of texts, one per level with a gap
+    compared_levels = {}  # role -> number of levels that had enough people
+    if len(group_names) == 2:
+        first, second = group_names
+        for key in sorted(ratios.keys()):
+            role_id, level_id = key
+            first_values = ratios[key].get(first, [])
+            second_values = ratios[key].get(second, [])
+            enough = (len(first_values) >= config.SYSTEMIC_MIN_GROUP_SIZE
+                      and len(second_values) >= config.SYSTEMIC_MIN_GROUP_SIZE)
+            row = {
+                "role_id": role_id, "level_id": level_id,
+                "group_1": first, "group_1_count": len(first_values), "group_1_median": "",
+                "group_2": second, "group_2_count": len(second_values), "group_2_median": "",
+                "gap_pct": "", "lower_group": "", "meets_threshold": "",
+            }
+            if enough:
+                first_median = metrics.median(first_values)
+                second_median = metrics.median(second_values)
+                # Positive gap: group 2 is lower. Negative: group 1 is lower.
+                gap_pct = (first_median - second_median) / first_median * 100.0
+                lower = second if gap_pct > 0 else first
+                if gap_pct < 0:
+                    gap_pct_of_higher = (second_median - first_median) / second_median * 100.0
+                else:
+                    gap_pct_of_higher = gap_pct
+                meets = gap_pct_of_higher >= config.SYSTEMIC_GAP_PCT
+                row["group_1_median"] = format(first_median, ".4f")
+                row["group_2_median"] = format(second_median, ".4f")
+                row["gap_pct"] = format(gap_pct_of_higher, ".2f")
+                row["lower_group"] = lower
+                row["meets_threshold"] = "YES" if meets else "NO"
+                compared_levels[role_id] = compared_levels.get(role_id, 0) + 1
+                if meets:
+                    text = (level_id + " " + format(gap_pct_of_higher, ".1f") + "% (" + str(len(first_values))
+                            + " vs " + str(len(second_values)) + " people)")
+                    lower_levels.setdefault((role_id, lower), []).append(text)
+            gap_rows.append(row)
+
+    covered = set()
+    for key in sorted(lower_levels.keys()):
+        role_id, lower = key
+        if len(lower_levels[key]) < config.SYSTEMIC_MIN_LEVELS:
+            continue
+        # "Consistently" also means most of the levels, not just three of many.
+        # With 40 roles tested, a few would show three gaps purely by chance.
+        if len(lower_levels[key]) < config.SYSTEMIC_MIN_LEVEL_SHARE * compared_levels[role_id]:
+            continue
+        add_finding(findings, "SYSTEMIC_DISPARITY", "role", role_id, "",
+                    lower + " median compa-ratio is at least " + format(config.SYSTEMIC_GAP_PCT, ".0f")
+                    + "% below the other group at " + str(len(lower_levels[key])) + " of "
+                    + str(compared_levels[role_id]) + " levels compared in role " + role_id + ": "
+                    + ", ".join(lower_levels[key]))
+        for person in snapshot:
+            if person["role_id"] == role_id and group_of[person["employee_id"]] == lower:
+                covered.add(person["employee_id"])
+    return gap_rows, covered
+
+
 def narrowest_group(employee_id, groups_of_employee, group_by_id):
     """An employee can be in several groups. Use the most specific one."""
     best = None
@@ -151,7 +236,7 @@ def narrowest_group(employee_id, groups_of_employee, group_by_id):
     return best
 
 
-def check_outliers(tables, snapshot, rate_lookup, findings):
+def check_outliers(tables, snapshot, rate_lookup, findings, covered):
     """Compare each active employee's pay with what the factors predict."""
     group_by_id = lookups.index_by(tables["comparable_group"], "group_id")
     groups_of_employee = {}
@@ -180,8 +265,11 @@ def check_outliers(tables, snapshot, rate_lookup, findings):
             group_median = format(metrics.median(values), ".4f")
             group_size = len(values)
 
+        # A person inside a flagged systemic gap is reported once, under that
+        # group-level finding, and not again as an individual low outlier.
+        in_systemic_finding = employee_id in covered
         flag = ""
-        if residual < -config.OUTLIER_THRESHOLD:
+        if residual < -config.OUTLIER_THRESHOLD and not in_systemic_finding:
             flag = "UNEXPLAINED_OUTLIER_LOW"
         elif residual > config.OUTLIER_THRESHOLD:
             flag = "UNEXPLAINED_OUTLIER_HIGH"
@@ -201,6 +289,7 @@ def check_outliers(tables, snapshot, rate_lookup, findings):
             "group_size": group_size,
             "group_median_compa_ratio": group_median,
             "outlier_flag": flag,
+            "in_systemic_finding": "YES" if in_systemic_finding else "",
         })
 
         if flag != "":
@@ -226,7 +315,19 @@ def run_detection(csv_folder):
     # The detector does not use the generator's pay formula. It estimates the
     # policy from the employees' own data, then replaces the expected ratio
     # on every person with the estimated one.
-    policy = policy_fit.fit_policy(snapshot)
+    #
+    # The group comparison runs first because it needs only compa-ratios.
+    # People inside a flagged systemic gap are left out of the estimate:
+    # their pay does not follow the normal policy, so including them would
+    # bend the line.
+    findings = []
+    gap_rows, covered = check_systemic(tables, snapshot, findings)
+    systemic_findings = findings
+    people_for_fit = []
+    for person in snapshot:
+        if person["employee_id"] not in covered:
+            people_for_fit.append(person)
+    policy = policy_fit.fit_policy(people_for_fit)
     for person in snapshot:
         person["expected_ratio"] = policy_fit.expected_ratio(
             policy, person["level_tenure_months"], person["rating"], person["premium_pct"])
@@ -235,15 +336,21 @@ def run_detection(csv_folder):
     check_salary_records(tables, band_lookup, rate_lookup, findings)
     check_adjustments(tables, findings)
     check_groups(tables, snapshot_by_employee, findings)
-    metric_rows = check_outliers(tables, snapshot, rate_lookup, findings)
-    return findings, metric_rows, policy
+    for finding in systemic_findings:
+        add_finding(findings, finding["issue_type"], finding["table_name"], finding["record_id"],
+                    finding["employee_id"], finding["evidence"])
+    metric_rows = check_outliers(tables, snapshot, rate_lookup, findings, covered)
+    return findings, metric_rows, policy, gap_rows
 
 
 FINDING_COLUMNS = ["finding_id", "issue_type", "table_name", "record_id", "employee_id",
                    "recommended_action", "evidence"]
 METRIC_COLUMNS = ["employee_id", "salary_record_id", "band_id", "compa_ratio", "band_position",
                   "level_tenure_months", "rating", "premium_pct", "expected_compa_ratio", "residual",
-                  "group_id", "group_size", "group_median_compa_ratio", "outlier_flag"]
+                  "group_id", "group_size", "group_median_compa_ratio", "outlier_flag",
+                  "in_systemic_finding"]
+GAP_COLUMNS = ["role_id", "level_id", "group_1", "group_1_count", "group_1_median",
+               "group_2", "group_2_count", "group_2_median", "gap_pct", "lower_group", "meets_threshold"]
 
 
 ESTIMATE_COLUMNS = ["base_ratio", "per_tenure_year", "tenure_cap_years", "per_rating_point",
@@ -259,9 +366,10 @@ def main():
 
     csv_folder = os.path.join(args.data, args.scale, "csv")
     out_folder = os.path.join(args.out, args.scale)
-    findings, metric_rows, policy = run_detection(csv_folder)
+    findings, metric_rows, policy, gap_rows = run_detection(csv_folder)
     io_utils.write_csv(findings, out_folder, "findings.csv", FINDING_COLUMNS)
     io_utils.write_csv(metric_rows, out_folder, "employee_metrics.csv", METRIC_COLUMNS)
+    io_utils.write_csv(gap_rows, out_folder, "group_gap_by_role_level.csv", GAP_COLUMNS)
     policy_rows = []
     for name in ESTIMATE_COLUMNS:
         policy_rows.append({"parameter": name, "estimated_value": format(policy[name], ".4f")})
