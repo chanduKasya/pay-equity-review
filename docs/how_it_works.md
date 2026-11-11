@@ -48,6 +48,7 @@ Those are two of the mistakes the detector looks for.
 | `inject.py` | Adds the labelled edge cases and builds the ground truth |
 | `io_utils.py` | Writes CSV, JSON and SQL, and computes checksums |
 | `generate.py` | Calls the stages in order and writes everything |
+| `policy_fit.py` | Estimates the pay rule from the data with a least-squares regression |
 | `detect.py` | Finds problems using only the input tables |
 | `evaluate.py` | Precision and recall against the ground truth |
 | `validate.py` | 101 data-quality checks |
@@ -125,6 +126,31 @@ Each change writes one row to the ground truth at the same moment.
   level while the rationale is empty?
 - **Unexplained outlier:** is the ratio more than 0.08 from the expected
   ratio? The finding lists the factors and the group median as evidence.
+
+## How the detector learns the pay rule (`policy_fit.py`)
+
+The detector is not told the pay rule. It works it out from the employees.
+
+Picture a scatter of dots, one per employee: how long they have been in
+their level along the bottom, their compa-ratio up the side. The dots form
+a rising cloud. **Least squares** draws the straight line through the
+cloud that is, overall, closest to all the dots. The slope of that line is
+"how much each extra year adds". Doing this for tenure, rating and premium
+at once gives four numbers: a starting value and one slope per factor.
+
+Three extra steps:
+
+1. **Finding the cap.** Tenure stops counting after some number of years,
+   but the detector does not know how many. It tries 2, 3, 4 ... 10 and
+   keeps the one whose line fits best.
+2. **Ignoring the troublemakers.** A few badly paid people would tilt the
+   line. So it fits once, sets aside the dots furthest from the line, and
+   fits again on the rest.
+3. **Predicting.** Each person's expected ratio is read off the final line.
+
+On the full dataset it estimates 0.892 + 0.0186 per year (up to 6 years)
++ 0.0277 per rating point. The generator used 0.90, 0.02 (up to 5 years)
+and 0.03. Close, and found without being told.
 
 ## How reproducibility works
 

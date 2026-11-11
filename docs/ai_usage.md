@@ -20,6 +20,7 @@ guidelines ask for honest disclosure.
 | Design documents | 7-8 | Wrote `assumptions.md` and `data_dictionary.md` | Read both, and asked for a plain-language explanation of the project before any code was written |
 | Master tables | 9 | Wrote `config.py`, `io_utils.py`, `master_data.py` and the first `generate.py` | Ran them on my Mac and committed them |
 | Core pipeline | 10 | With access to the project folder: wrote the remaining generator stages, review workflow, anomaly injection, detector, evaluator, validator, reproducibility check, exports, tests and documents; ran them; made the commits | Ran the full pipeline on my Mac and compared the output with the README |
+| Estimated pay policy | 23 | Wrote `policy_fit.py` (least squares with the standard library), changed the detector to use it, added tests and updated the results | Asked for the change so the detector no longer reads the generator's constants |
 | Dashboard | 17-18 | Wrote `app.py` and checked that every page loads on both datasets | Ran it on my Mac |
 
 Commits made by Claude carry a `Co-Authored-By: Claude` line, so the git
@@ -28,7 +29,7 @@ history shows which commits those are.
 ## Where AI accelerated the work
 
 - Turning a one-page brief into a 14-table data model with keys and rules.
-- Writing about 3,500 lines of Python (including comments) and 23 tests in
+- Writing about 3,500 lines of Python (including comments) and 28 tests in
   one session, and a dashboard the next day.
 - Suggesting checks I would not have thought of: mutation tests that damage
   the data to prove the validator can fail, and a test that runs the
@@ -43,6 +44,7 @@ These were caught by the project's own checks during the build:
 | The first validator crashed on a broken foreign key instead of reporting it | A mutation test | Join-based checks now stop cleanly when key checks fail |
 | The 500-employee dataset had no proposal in SUBMITTED status | The validator's coverage check | Proposal progress changed from a random roll to a fixed pattern |
 | The first thresholds produced proposals for about 18% of employees | Reading the row counts | Proposal threshold changed from 0.04 to 0.05 |
+| The first test of the estimated policy used tolerances that only held on the 5,000-employee data | The test failed on the 500-employee dataset | The test now checks the total tenure effect with tolerances suited to a small sample |
 | The README stated the wrong Python version for my Mac | An error message from my own terminal | Corrected to 3.15 |
 
 ## Personal verification log

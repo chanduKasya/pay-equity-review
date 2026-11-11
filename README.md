@@ -15,7 +15,9 @@ factors to identify unexplained disparities, on synthetic data that I generate.
    adjustment proposals with evidence and an approval trail.
 3. **Injects labelled edge cases** and stores the labels in a separate
    ground truth folder.
-4. **Detects** the problems using only the input tables.
+4. **Detects** the problems using only the input tables. The detector
+   estimates the pay policy from the data with a regression; it is not
+   given the generator's formula.
 5. **Validates and evaluates:** 101 data-quality checks, precision and recall
    against the ground truth, and a same-seed reproducibility check.
 
@@ -49,7 +51,7 @@ also be run alone:
 | 4 | `python3 src/evaluate.py --scale full` | Scores the findings against the ground truth |
 | 5 | `python3 src/reproduce.py --scale full` | Generates twice and compares checksums |
 
-Optional tests (23 tests, about one second):
+Optional tests (28 tests, about one second):
 
 ```
 python3 -m venv .venv
@@ -84,7 +86,7 @@ core project in `src/` still needs nothing beyond the standard library.
 After `python3 src/run_all.py --scale full` you should see:
 
 - `Validation (full): 101 of 101 checks passed`
-- an evaluation table ending in `ALL  259  267  253  14  6  0.948  0.977  0.962`
+- an evaluation table ending in `ALL  259  264  253  11  6  0.958  0.977  0.967`
 - `Reproducibility (full): 32 of 32 files identical across two runs`
 
 The same results are saved as files:
@@ -123,24 +125,49 @@ and 80 are paid in a different currency from their band.
 | Currency conversion missing | 30 | 30 | 30 | 0 | 0 | 1.000 | 1.000 |
 | Adjustment applied without approval | 15 | 15 | 15 | 0 | 0 | 1.000 | 1.000 |
 | Incomparable roles grouped without rationale | 15 | 15 | 15 | 0 | 0 | 1.000 | 1.000 |
-| Unexplained outlier, low | 78 | 75 | 75 | 0 | 3 | 1.000 | 0.962 |
-| Unexplained outlier, high | 41 | 52 | 38 | 14 | 3 | 0.731 | 0.927 |
-| **All** | **259** | **267** | **253** | **14** | **6** | **0.948** | **0.977** |
+| Unexplained outlier, low | 78 | 72 | 72 | 0 | 6 | 1.000 | 0.923 |
+| Unexplained outlier, high | 41 | 52 | 41 | 11 | 0 | 0.788 | 1.000 |
+| **All** | **259** | **264** | **253** | **11** | **6** | **0.958** | **0.977** |
 
 How to read this honestly:
 
 - The five rule-based edge cases score 100% because each one breaks a rule
   that can be checked exactly. This shows the labels and the data agree. It
   does not show the detector would cope with messier real-world data.
-- The outlier rows are the meaningful ones. The 6 misses are injected
-  outliers that are too mild to cross the 0.08 threshold.
-- All 14 extra "high" flags are the same kind of person: their rating fell
+- The outlier rows are the meaningful ones. The detector is not told the
+  pay policy; it estimates it from the data (see the next section). The 6
+  misses are low-paid injected outliers that are too mild to cross the
+  0.08 threshold.
+- All 11 extra "high" flags are the same kind of person: their rating fell
   sharply in 2026, and the no-pay-cut rule kept their salary above what
   their current rating predicts. They were not injected, so they count as
   false positives, but a reviewer would probably want to see them.
 - `output/full/outlier_threshold_sweep.csv` shows the trade-off. A threshold
-  of 0.07 gives 0.983 recall at 0.830 precision. A threshold of 0.10 gives
-  0.972 precision at 0.866 recall.
+  of 0.07 gives 0.975 recall at 0.847 precision. A threshold of 0.10 gives
+  0.972 precision at 0.874 recall.
+
+### Pay policy estimated by the detector
+
+`src/policy_fit.py` fits a least-squares regression of compa-ratio on years
+in level, rating and documented premium, using only the standard library.
+The tenure cap is found by trying 2 to 10 years and keeping the best fit.
+The line is fitted twice: the second time without the people furthest from
+it, so that real outliers do not pull the estimate towards themselves.
+
+| Parameter | Estimated by the detector | Used by the generator |
+|---|---|---|
+| Ratio with no tenure and a rating of 3 | 0.8921 | 0.9000 |
+| Added per year in level | 0.0186 | 0.0200 |
+| Years after which tenure stops counting | 6 | 5 |
+| Added per rating point | 0.0277 | 0.0300 |
+| Added per unit of documented premium | 1.0181 | 1.0000 |
+
+The right-hand column is never read by the detector. `evaluate.py` prints
+it only to check the estimate. The small differences have a cause: pay was
+last set at the April review, but tenure is measured at the December review
+date, so everyone looks about eight months more senior than when their pay
+was fixed. With 500 employees the estimate is noisier (cap 4, 0.0295 per
+year), and one mild outlier is missed.
 
 ### Validation
 
@@ -201,10 +228,11 @@ prompts/             every prompt sent to an AI tool
 
 ## Known limitations
 
-- The detector and the generator share the same formulas, so the rule-based
-  edge cases are found perfectly by construction.
-- The outlier check uses the written pay policy. A real company would have
-  to estimate that relationship from its data.
+- The detector and the generator share the compa-ratio formulas, so the
+  rule-based edge cases are found perfectly by construction.
+- The estimated policy assumes the same shape as the real one (a straight
+  line per factor with a tenure cap). Real pay data would be messier, and
+  small datasets give a noisier estimate.
 - The outlier check looks at current factors only, so pay protected by an
   earlier rating is flagged as unexplained.
 - Only base salary is modelled. There is one review cycle.

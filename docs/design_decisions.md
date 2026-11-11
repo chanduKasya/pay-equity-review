@@ -34,6 +34,8 @@ master tables -> employees -> salary history -> tenure -> review workflow
 | Salary records are append-only events | History is never overwritten; an adjustment adds a new record | "Current salary" needs a lookup of the latest record |
 | The job (role, level, location) lives on the salary record | No separate assignment-history table | A job change without a pay change cannot be represented |
 | `recorded_compa_ratio` as an upstream value | Three edge cases can live in one field without corrupting other rows | It is an extra, slightly artificial column |
+| The detector estimates the pay policy by regression (`policy_fit.py`) | It no longer reads the generator's constants, so the outlier scores are a real test | The estimate is slightly off and noisier on small data; a hand-written solver instead of a library |
+| Least squares written with the standard library, not scikit-learn | Keeps the core project free of installs; four coefficients need only a 4x4 system | About 60 lines of maths code to maintain and test |
 | Labels only in `ground_truth/` | The detector cannot cheat | The validator must read both folders |
 | Valid data first, anomalies injected afterwards | Baseline and anomalies are separate steps, and each anomaly is exactly one change | Injection code must know the data model well |
 | Proposal progress uses a fixed repeating pattern | Every lifecycle state appears even with 500 employees | Less "natural" than a random draw |
@@ -71,7 +73,10 @@ The brief says labels must come from documented rules, not random assignment.
    must not be flagged.
 6. **SQL round trip.** The SQL seed is loaded into SQLite; row counts must
    match the CSVs and the database's own foreign-key check must be clean.
-7. **Reproducibility.** Two same-seed runs must give identical checksums,
+7. **Regression tests** (`tests/test_policy_fit.py`). The solver is checked
+   on a small system with a known answer, the fit must recover a known
+   policy exactly, and it must stay close when some points are distorted.
+8. **Reproducibility.** Two same-seed runs must give identical checksums,
    and must also match the checksums stored with the committed dataset.
 
 ## Problems found during the build
@@ -85,14 +90,17 @@ The brief says labels must come from documented rules, not random assignment.
 
 ## Limitations
 
-- **Shared formulas.** The generator and detector use the same functions in
-  `metrics.py`. That guarantees one definition of each formula, but it means
-  the rule-based edge cases are detected perfectly by construction.
-- **Known policy.** The outlier check compares pay with a policy that is
-  written down. A real review would need to estimate it, for example with a
-  regression inside each comparable group.
+- **Shared formulas.** The generator and detector use the same compa-ratio
+  functions in `metrics.py`. That guarantees one definition of each formula,
+  but it means the rule-based edge cases are detected perfectly by construction.
+- **Estimated policy has the right shape built in.** The regression is told
+  which factors matter and that tenure has a cap. It finds the numbers, not
+  the form. One regression is fitted for the whole company, not per group.
+- **Small samples.** With 500 employees the fitted cap and slope are off
+  (cap 4, 0.0295 per year against 5 and 0.02), though the total tenure
+  effect is close.
 - **Current factors only.** Pay that was fair under an earlier rating is
-  flagged once the rating drops. These are the 14 false positives.
+  flagged once the rating drops. These are the 11 false positives.
 - **Snapshot tenure.** Expected pay uses tenure on the review date, while
   pay was set a few months earlier. The difference is at most about 0.013.
 - **One label per record.** Real data can have several problems on one record.
@@ -104,6 +112,6 @@ The brief says labels must come from documented rules, not random assignment.
 
 ## What I would do next
 
-- Estimate the pay policy from the data instead of reading it from config.
+- Fit the policy within job families, and add rating history as a factor.
 - Add rating history as an explaining factor to remove the false positives.
 - Allow several labelled issues on one record.
