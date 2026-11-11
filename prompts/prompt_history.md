@@ -1,21 +1,44 @@
 # Prompt History
 
-Every prompt I sent to an AI tool for this project, in order. AI responses are
-not included (the FAQ makes them optional). How the AI was used, and what I
-reviewed myself, is described in `docs/ai_usage.md`.
+Every prompt I sent to an AI tool for this project. How the AI was used, and
+what I reviewed myself, is described in `docs/ai_usage.md`.
 
 **Tool:** Claude (Anthropic), in the Claude desktop app, model Claude Fable 5.2.
 This was the only AI tool used. From prompt 10 onward the AI had access to the
-project folder on my computer and wrote files, ran the code and made the git
+project folder on my computer and wrote files, ran the code and made git
 commits there. Those commits carry a `Co-Authored-By: Claude` line.
 
+This file has two parts:
+
+1. **Summary by phase**: a short description of what each group of prompts
+   asked for and what came out of it. This is a summary, not the original wording.
+2. **Full log**: every prompt in order, copied word for word.
+
+## Part 1: Summary by phase
+
+| Phase | Prompts | What I asked for | Outcome |
+|---|---|---|---|
+| Planning and technology stack | 1-2 | A plan for the YottaFlex candidate project, given the brief and both guideline PDFs, and step-by-step guidance for the 72-hour window | A staged plan, a Python standard-library stack and a schedule |
+| Repository setup and troubleshooting | 3-7 | Help with the terminal commands to clone the repository, create the folder structure and make the first commit, including two errors along the way | Working repository with the first commits made by me |
+| Design documents and understanding | 7-8 | The assumptions and data dictionary, then a plain-language explanation of the project and both documents before any code | `docs/assumptions.md`, `docs/data_dictionary.md`, and my own understanding of the scope |
+| Master tables | 9 | The first generator code for the fixed master tables | `config.py`, `io_utils.py`, `master_data.py`, first `generate.py`; run and committed by me |
+| Core pipeline | 10 | For the AI to take over and build the rest: employees, salary history, review workflow, anomaly injection, detector, evaluator, validator, reproducibility check, exports and tests | The remaining code in `src/`, the tests, the datasets and the documents |
+| Running and understanding | 11-16 | How to run the project in the terminal and in VS Code, a fix for a `pip` error, a beginner-level explanation of the whole project, and an estimate of the effort without AI | Confirmed run on my Mac with identical checksums; virtual-environment steps added to the README |
+| Dashboard | 17-18 | A clean, interactive Streamlit app over the results | `app.py`, running on my Mac |
+| Housekeeping | 19-22 | A single-file snapshot of the project, and a more professional presentation of this prompt log | A local snapshot file (not in the repository), and this summary section |
+
+## Part 2: Full log
+
+Prompts are copied word for word, including typing mistakes. Where I pasted
+terminal output or a screenshot instead of typing a question, the entry
+describes what was pasted. AI responses are not included (the FAQ makes them
+optional).
+
 **Limitation:** the app has no prompt export, so this log is kept by hand.
-Prompts are copied word for word. Where I pasted terminal output instead of
-typing a question, the entry describes what was pasted.
 
-All times are IST on 2026-11-10 unless a new date heading appears.
+All times are IST.
 
-## 2026-11-10
+### 2026-11-10
 
 | # | Time | Prompt |
 |---|---|---|
@@ -36,8 +59,13 @@ All times are IST on 2026-11-10 unless a new date heading appears.
 | 15 | 14:48 | "now explain everything i need to know, like i am 10 and a beginner" |
 | 16 | 14:53 | "with out any AI help , how long can this project take with one person like me" |
 
-## 2026-11-11
+### 2026-11-11
 
 | # | Time | Prompt |
 |---|---|---|
 | 17 | 11:08 | "design a stream lit app for this project with clean and interactive application" |
+| 18 | 12:12 | Sent a screenshot of the dashboard running in my browser, with no text |
+| 19 | 12:14 | "put everything until now in a single text file , every file content , every source code and all," |
+| 20 | 12:15 | "remove the prompt history" (this referred to the single text file from prompt 19) |
+| 21 | 12:23 | "replace the prompts file with this , remove all the unnecessary prompts previously and all the beginner prompts that will look unprofessional, and edit the AI usage file also" followed by my own draft of a shorter, reworded prompt list. The AI advised keeping the word-for-word log and proposed adding a summary by phase instead. |
+| 22 | 12:25 | "yes" (agreeing to the summary-by-phase approach, which is Part 1 of this file) |
