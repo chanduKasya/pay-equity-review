@@ -61,6 +61,24 @@ python -m pytest
 The virtual environment is needed on systems where Python is managed by the
 operating system or Homebrew, which refuse a plain `pip install`.
 
+## Optional dashboard
+
+A Streamlit app lets you explore the results in a browser: findings with
+their evidence, one employee's pay history, the pay distribution, proposals
+with their approval trail, the validation report and a compa-ratio calculator.
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-app.txt
+streamlit run app.py
+```
+
+The app only reads the files in `data/`, `output/` and `ground_truth/`. The
+core project in `src/` still needs nothing beyond the standard library.
+
+![Dashboard overview](docs/images/dashboard_overview.png)
+
 ## How to verify the key behaviour
 
 After `python3 src/run_all.py --scale full` you should see:
@@ -158,6 +176,7 @@ are paid low and 1% high against the documented policy.
 
 ```
 src/                 all code (see docs/how_it_works.md for a guided tour)
+app.py               optional Streamlit dashboard over the results
 tests/               pytest tests
 data/<scale>/csv     input tables, one CSV per table
 data/<scale>/json    the same tables as JSON
@@ -192,7 +211,7 @@ prompts/             every prompt sent to an AI tool
 - Exchange rates are made-up yearly values.
 - No gender, ethnicity, age or names are generated (see deviation D1).
 - For employees hired before 2024, time in level is counted from hire.
-- There is no user interface. Results are CSV and Markdown files.
+- The dashboard is read-only. It shows results and does not edit data or approve proposals.
 
 More detail is in `docs/design_decisions.md`.
 

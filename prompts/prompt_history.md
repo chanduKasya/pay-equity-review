@@ -33,3 +33,11 @@ All times are IST on 2026-11-10 unless a new date heading appears.
 | 12 | 14:29 | Pasted terminal output of `python3 src/run_all.py --scale full` from my Mac |
 | 13 | 14:32 | "how to run it on VS code" |
 | 14 | 14:44 | Pasted terminal output: `pip3 install pytest` failed with "externally-managed-environment" |
+| 15 | 14:48 | "now explain everything i need to know, like i am 10 and a beginner" |
+| 16 | 14:53 | "with out any AI help , how long can this project take with one person like me" |
+
+## 2026-11-11
+
+| # | Time | Prompt |
+|---|---|---|
+| 17 | 11:08 | "design a stream lit app for this project with clean and interactive application" |

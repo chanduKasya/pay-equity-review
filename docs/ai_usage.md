@@ -18,6 +18,7 @@ stating that plainly because the guidelines ask for honest disclosure.
 | Design documents (prompts 7-8) | Claude wrote `assumptions.md` and `data_dictionary.md`. I asked for a plain-language explanation of the project and both documents before going further (prompt 8). |
 | Master tables (prompt 9) | Claude wrote `config.py`, `io_utils.py`, `master_data.py` and the first `generate.py`. I ran them on my Mac and committed them. |
 | Everything else (prompt 10) | I asked Claude to take over. With access to the project folder, it wrote the remaining generator stages, the review workflow, anomaly injection, detector, evaluator, validator, reproducibility check, exports, tests and documents. It ran them and made the commits. |
+| Dashboard (prompt 17) | I asked for a Streamlit app. Claude wrote `app.py`, checked every page loads on both datasets and committed it. |
 
 Commits made by Claude carry a `Co-Authored-By: Claude` line, so the git
 history shows which commits those are.

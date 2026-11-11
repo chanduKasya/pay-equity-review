@@ -107,4 +107,3 @@ The brief says labels must come from documented rules, not random assignment.
 - Estimate the pay policy from the data instead of reading it from config.
 - Add rating history as an explaining factor to remove the false positives.
 - Allow several labelled issues on one record.
-- Add a small dashboard over `output/`.
