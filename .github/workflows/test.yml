@@ -1,0 +1,36 @@
+name: Tests
+
+# Run on every push and on every pull request.
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12", "3.13"]
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # The pipeline needs only the standard library, so it runs before
+      # anything is installed. It generates the data, validates it, runs the
+      # detector, scores it and checks that the checksums match the ones
+      # saved in the repository.
+      - name: Run the full workflow on the starter dataset
+        run: python3 src/run_all.py --scale starter
+
+      - name: Install pytest
+        run: python3 -m pip install -r requirements.txt
+
+      - name: Run the tests
+        run: python3 -m pytest -v
