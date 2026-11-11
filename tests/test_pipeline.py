@@ -136,13 +136,13 @@ def test_validator_catches_an_illegal_status_jump(dataset, tmp_path):
 def test_detector_works_without_the_ground_truth_folder(dataset, tmp_path):
     # Only the input tables are copied. No ground truth exists in tmp_path.
     data_copy = copy_dataset(dataset, tmp_path)
-    findings, metric_rows, policy = detect.run_detection(os.path.join(data_copy, "csv"))
+    findings, metric_rows, policy, _ = detect.run_detection(os.path.join(data_copy, "csv"))
     assert len(findings) > 0
     assert len(metric_rows) > 0
 
 
 def test_detector_finds_every_rule_based_edge_case(dataset):
-    findings, metric_rows, policy = detect.run_detection(os.path.join(dataset["data"], "csv"))
+    findings, metric_rows, policy, _ = detect.run_detection(os.path.join(dataset["data"], "csv"))
     rows, misses, matched, correct_decisions, sweep = evaluate.run_evaluation(
         findings, dataset["ground_truth"], metric_rows)
     by_type = {row["issue_type"]: row for row in rows}
@@ -156,7 +156,7 @@ def test_detector_finds_every_rule_based_edge_case(dataset):
 
 
 def test_valid_custom_group_with_rationale_is_not_flagged(dataset):
-    findings, _, _ = detect.run_detection(os.path.join(dataset["data"], "csv"))
+    findings, _, _, _ = detect.run_detection(os.path.join(dataset["data"], "csv"))
     flagged = set(f["record_id"] for f in findings if f["issue_type"] == "INCOMPARABLE_GROUP")
     documented = [group["group_id"] for group in dataset["tables"]["comparable_group"]
                   if group["grouping_basis"] == "CUSTOM" and group["rationale"] != ""]
@@ -179,7 +179,7 @@ def test_history_is_append_only(dataset):
 def test_detector_estimates_the_policy_from_data(dataset):
     # The detector is never given these numbers; it has to recover them.
     # 500 employees is a small sample, so the tolerances are loose.
-    _, _, policy = detect.run_detection(os.path.join(dataset["data"], "csv"))
+    _, _, policy, _ = detect.run_detection(os.path.join(dataset["data"], "csv"))
     assert abs(policy["base_ratio"] - config.POLICY_BASE_RATIO) < 0.03
     assert abs(policy["per_rating_point"] - config.POLICY_PER_RATING_POINT) < 0.006
     assert abs(policy["per_premium_unit"] - 1.0) < 0.1
@@ -193,3 +193,46 @@ def test_detect_module_does_not_use_the_generator_policy():
     source = open(os.path.join(os.path.dirname(detect.__file__), "detect.py"), encoding="utf-8").read()
     assert "POLICY_" not in source
     assert "expected_compa_ratio(" not in source
+
+
+# ---------------- systemic disparity (needs the full 5,000 employees) ----------------
+
+@pytest.fixture(scope="module")
+def full_dataset(tmp_path_factory):
+    root = tmp_path_factory.mktemp("full")
+    data_folder = os.path.join(str(root), "data")
+    truth_folder = os.path.join(str(root), "ground_truth")
+    tables, ground_truth = generate.build_dataset(SEED, 5000)
+    generate.write_dataset(tables, ground_truth, SEED, "full", data_folder, truth_folder)
+    return {"data": data_folder, "tables": tables, "ground_truth": ground_truth}
+
+
+def test_every_employee_has_one_demographic_group(dataset):
+    rows = dataset["tables"]["demographics"]
+    assert len(rows) == COUNT
+    assert set(row["demographic_group"] for row in rows) == set(config.DEMOGRAPHIC_GROUPS)
+
+
+def test_small_dataset_has_no_systemic_label_and_no_systemic_flag(dataset):
+    # 500 employees leave too few people per role and level to compare groups.
+    labelled = [l for l in dataset["ground_truth"] if l["issue_type"] == "SYSTEMIC_DISPARITY"]
+    findings, _, _, _ = detect.run_detection(os.path.join(dataset["data"], "csv"))
+    flagged = [f for f in findings if f["issue_type"] == "SYSTEMIC_DISPARITY"]
+    assert labelled == []
+    assert flagged == []
+
+
+def test_systemic_disparity_is_found_in_exactly_the_affected_roles(full_dataset):
+    labelled = set(l["record_id"] for l in full_dataset["ground_truth"] if l["issue_type"] == "SYSTEMIC_DISPARITY")
+    findings, _, _, _ = detect.run_detection(os.path.join(full_dataset["data"], "csv"))
+    flagged = set(f["record_id"] for f in findings if f["issue_type"] == "SYSTEMIC_DISPARITY")
+    assert len(labelled) == config.INJECT_SYSTEMIC_ROLES[0]
+    assert flagged == labelled
+
+
+def test_people_in_a_systemic_finding_are_not_also_individual_outliers(full_dataset):
+    findings, metric_rows, _, _ = detect.run_detection(os.path.join(full_dataset["data"], "csv"))
+    covered = [row for row in metric_rows if row["in_systemic_finding"] == "YES"]
+    assert len(covered) > 0
+    for row in covered:
+        assert row["outlier_flag"] != "UNEXPLAINED_OUTLIER_LOW"
