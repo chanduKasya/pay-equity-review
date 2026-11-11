@@ -60,6 +60,13 @@ CREATE TABLE "employee" (
   FOREIGN KEY ("manager_employee_id") REFERENCES "employee" ("employee_id")
 );
 
+CREATE TABLE "demographics" (
+  "employee_id" TEXT,
+  "demographic_group" TEXT,
+  PRIMARY KEY ("employee_id"),
+  FOREIGN KEY ("employee_id") REFERENCES "employee" ("employee_id")
+);
+
 CREATE TABLE "salary_record" (
   "salary_record_id" TEXT,
   "employee_id" TEXT,

@@ -7,254 +7,253 @@ GT-000005,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000235-2026-02,EMP-00023
 GT-000006,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000244-2026-01,EMP-000244,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
 GT-000007,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000319-2026-01,EMP-000319,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
 GT-000008,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000395-2026-01,EMP-000395,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000009,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000399-2026-01,EMP-000399,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000010,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000408-2026-01,EMP-000408,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000011,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000421-2026-01,EMP-000421,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000012,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000489-2026-01,EMP-000489,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000013,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000514-2026-01,EMP-000514,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000014,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000597-2026-01,EMP-000597,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000015,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000620-2026-01,EMP-000620,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000016,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000649-2026-01,EMP-000649,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000017,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000658-2026-01,EMP-000658,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000018,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000702-2026-01,EMP-000702,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000019,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000742-2026-01,EMP-000742,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000020,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000762-2026-01,EMP-000762,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000021,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000772-2026-01,EMP-000772,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000022,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000826-2026-02,EMP-000826,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000023,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000906-2026-01,EMP-000906,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000024,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000909-2026-01,EMP-000909,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000025,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000961-2026-01,EMP-000961,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000026,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001029-2026-01,EMP-001029,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000027,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-001061-2026-01,EMP-001061,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000028,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001066-2026-02,EMP-001066,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000029,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001071-2026-02,EMP-001071,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000030,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001149-2026-01,EMP-001149,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000031,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001178-2026-01,EMP-001178,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000032,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-001322-2026-02,EMP-001322,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000033,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001338-2026-01,EMP-001338,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000034,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-001394-2026-01,EMP-001394,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000035,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-001431-2026-01,EMP-001431,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000036,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001538-2026-01,EMP-001538,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000037,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-001574-2026-01,EMP-001574,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000038,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001577-2026-01,EMP-001577,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000039,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001642-2026-01,EMP-001642,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000040,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001665-2026-01,EMP-001665,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000041,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001706-2026-01,EMP-001706,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000042,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001709-2026-01,EMP-001709,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000043,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001784-2026-01,EMP-001784,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000044,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001850-2026-01,EMP-001850,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000045,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001864-2026-01,EMP-001864,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000046,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001896-2026-01,EMP-001896,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000047,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001899-2026-01,EMP-001899,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000048,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002039-2026-02,EMP-002039,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000049,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002047-2026-01,EMP-002047,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000050,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002078-2026-01,EMP-002078,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000051,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002143-2026-01,EMP-002143,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000052,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002147-2026-01,EMP-002147,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000053,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002166-2026-01,EMP-002166,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000054,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002169-2026-01,EMP-002169,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000055,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002179-2026-01,EMP-002179,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000056,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002282-2026-02,EMP-002282,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000057,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002305-2026-02,EMP-002305,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000058,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002416-2026-01,EMP-002416,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000059,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002423-2026-01,EMP-002423,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000060,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002453-2026-01,EMP-002453,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000061,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002494-2026-01,EMP-002494,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000062,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002542-2026-01,EMP-002542,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000063,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002573-2026-01,EMP-002573,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000064,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002617-2026-01,EMP-002617,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000065,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002708-2026-01,EMP-002708,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000066,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002737-2026-01,EMP-002737,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000067,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002808-2026-01,EMP-002808,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000068,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002867-2026-01,EMP-002867,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000069,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002989-2026-01,EMP-002989,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000070,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003071-2026-02,EMP-003071,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000071,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003083-2026-01,EMP-003083,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000072,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003098-2026-01,EMP-003098,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000073,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003194-2026-01,EMP-003194,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000074,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003236-2026-02,EMP-003236,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000075,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003239-2026-02,EMP-003239,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000076,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003249-2026-01,EMP-003249,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000077,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003295-2026-02,EMP-003295,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000078,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003299-2026-01,EMP-003299,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000079,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003315-2026-01,EMP-003315,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000080,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003344-2026-01,EMP-003344,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000081,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003361-2026-01,EMP-003361,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000082,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003413-2026-01,EMP-003413,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000083,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003414-2026-01,EMP-003414,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000084,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003445-2026-01,EMP-003445,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000085,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003471-2026-01,EMP-003471,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000086,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003499-2026-01,EMP-003499,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000087,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003514-2026-01,EMP-003514,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000088,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003533-2026-01,EMP-003533,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000089,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003615-2026-01,EMP-003615,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000090,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003619-2026-02,EMP-003619,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000091,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003634-2026-01,EMP-003634,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000092,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003694-2026-01,EMP-003694,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000093,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003816-2026-01,EMP-003816,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000094,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003865-2026-01,EMP-003865,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000095,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003873-2026-01,EMP-003873,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000096,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003877-2026-02,EMP-003877,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000097,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003910-2026-02,EMP-003910,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000098,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004035-2026-01,EMP-004035,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000099,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004134-2026-01,EMP-004134,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000100,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004141-2026-01,EMP-004141,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000101,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004187-2026-01,EMP-004187,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000102,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004191-2026-01,EMP-004191,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000103,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004200-2026-01,EMP-004200,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000104,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004244-2026-01,EMP-004244,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000105,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004251-2026-01,EMP-004251,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000106,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004252-2026-01,EMP-004252,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000107,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004287-2026-01,EMP-004287,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000108,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004332-2026-01,EMP-004332,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000109,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004361-2026-01,EMP-004361,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000110,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004389-2026-02,EMP-004389,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000111,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004467-2026-02,EMP-004467,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000112,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004626-2026-03,EMP-004626,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000113,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004648-2026-01,EMP-004648,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000114,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004651-2026-01,EMP-004651,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000115,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004744-2026-02,EMP-004744,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000116,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004780-2026-01,EMP-004780,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000117,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004793-2026-01,EMP-004793,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000118,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004819-2026-01,EMP-004819,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
-GT-000119,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004822-2026-02,EMP-004822,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
-GT-000120,EXPIRED_BAND,salary_record,SAL-EMP-003744-2026-01,EMP-003744,RECALCULATE,Compared against BAND-CSM-L3-BLR-2025 which expired on 2025-12-31
-GT-000121,EXPIRED_BAND,salary_record,SAL-EMP-002196-2025-01,EMP-002196,RECALCULATE,Compared against BAND-CSM-L2-LON-2024 which expired on 2024-12-31
-GT-000122,EXPIRED_BAND,salary_record,SAL-EMP-001326-2026-01,EMP-001326,RECALCULATE,Compared against BAND-SUP-L5-SGP-2025 which expired on 2025-12-31
-GT-000123,EXPIRED_BAND,salary_record,SAL-EMP-004968-2025-01,EMP-004968,RECALCULATE,Compared against BAND-SEC-L2-SGP-2024 which expired on 2024-12-31
-GT-000124,EXPIRED_BAND,salary_record,SAL-EMP-002628-2025-01,EMP-002628,RECALCULATE,Compared against BAND-FAN-L1-BLR-2024 which expired on 2024-12-31
-GT-000125,EXPIRED_BAND,salary_record,SAL-EMP-000238-2026-01,EMP-000238,RECALCULATE,Compared against BAND-PMG-L1-DUB-2025 which expired on 2025-12-31
-GT-000126,EXPIRED_BAND,salary_record,SAL-EMP-000463-2025-01,EMP-000463,RECALCULATE,Compared against BAND-PAN-L2-NYC-2024 which expired on 2024-12-31
-GT-000127,EXPIRED_BAND,salary_record,SAL-EMP-000065-2026-01,EMP-000065,RECALCULATE,Compared against BAND-UXR-L5-SGP-2025 which expired on 2025-12-31
-GT-000128,EXPIRED_BAND,salary_record,SAL-EMP-003695-2025-01,EMP-003695,RECALCULATE,Compared against BAND-SWE-L3-BLR-2024 which expired on 2024-12-31
-GT-000129,EXPIRED_BAND,salary_record,SAL-EMP-003491-2026-01,EMP-003491,RECALCULATE,Compared against BAND-SEN-L5-NYC-2025 which expired on 2025-12-31
-GT-000130,EXPIRED_BAND,salary_record,SAL-EMP-001531-2026-01,EMP-001531,RECALCULATE,Compared against BAND-ACC-L2-SGP-2025 which expired on 2025-12-31
-GT-000131,EXPIRED_BAND,salary_record,SAL-EMP-000661-2026-01,EMP-000661,RECALCULATE,Compared against BAND-MKM-L1-LON-2025 which expired on 2025-12-31
-GT-000132,EXPIRED_BAND,salary_record,SAL-EMP-003843-2026-02,EMP-003843,RECALCULATE,Compared against BAND-REC-L3-HYD-2025 which expired on 2025-12-31
-GT-000133,EXPIRED_BAND,salary_record,SAL-EMP-001083-2025-02,EMP-001083,RECALCULATE,Compared against BAND-PYS-L4-HYD-2024 which expired on 2024-12-31
-GT-000134,EXPIRED_BAND,salary_record,SAL-EMP-000935-2025-01,EMP-000935,RECALCULATE,Compared against BAND-BRD-L3-BLR-2024 which expired on 2024-12-31
-GT-000135,EXPIRED_BAND,salary_record,SAL-EMP-003069-2025-01,EMP-003069,RECALCULATE,Compared against BAND-AUD-L2-BLR-2024 which expired on 2024-12-31
-GT-000136,EXPIRED_BAND,salary_record,SAL-EMP-001323-2025-01,EMP-001323,RECALCULATE,Compared against BAND-MKM-L1-DUB-2024 which expired on 2024-12-31
-GT-000137,EXPIRED_BAND,salary_record,SAL-EMP-000417-2025-01,EMP-000417,RECALCULATE,Compared against BAND-LND-L2-BER-2024 which expired on 2024-12-31
-GT-000138,EXPIRED_BAND,salary_record,SAL-EMP-000588-2026-01,EMP-000588,RECALCULATE,Compared against BAND-PMG-L4-SGP-2025 which expired on 2025-12-31
-GT-000139,EXPIRED_BAND,salary_record,SAL-EMP-002674-2025-01,EMP-002674,RECALCULATE,Compared against BAND-CNT-L5-BLR-2024 which expired on 2024-12-31
-GT-000140,EXPIRED_BAND,salary_record,SAL-EMP-002430-2025-02,EMP-002430,RECALCULATE,Compared against BAND-PDS-L5-BLR-2024 which expired on 2024-12-31
-GT-000141,EXPIRED_BAND,salary_record,SAL-EMP-001891-2026-01,EMP-001891,RECALCULATE,Compared against BAND-UXR-L3-BLR-2025 which expired on 2025-12-31
-GT-000142,EXPIRED_BAND,salary_record,SAL-EMP-001208-2025-01,EMP-001208,RECALCULATE,Compared against BAND-FAN-L2-DUB-2024 which expired on 2024-12-31
-GT-000143,EXPIRED_BAND,salary_record,SAL-EMP-001476-2025-01,EMP-001476,RECALCULATE,Compared against BAND-SDR-L3-BLR-2024 which expired on 2024-12-31
-GT-000144,EXPIRED_BAND,salary_record,SAL-EMP-002652-2026-01,EMP-002652,RECALCULATE,Compared against BAND-SUP-L5-DUB-2025 which expired on 2025-12-31
-GT-000145,EXPIRED_BAND,salary_record,SAL-EMP-003795-2026-01,EMP-003795,RECALCULATE,Compared against BAND-UXR-L1-SGP-2025 which expired on 2025-12-31
-GT-000146,EXPIRED_BAND,salary_record,SAL-EMP-002672-2026-01,EMP-002672,RECALCULATE,Compared against BAND-SWE-L1-BLR-2025 which expired on 2025-12-31
-GT-000147,EXPIRED_BAND,salary_record,SAL-EMP-000552-2025-01,EMP-000552,RECALCULATE,Compared against BAND-PYS-L3-SGP-2024 which expired on 2024-12-31
-GT-000148,EXPIRED_BAND,salary_record,SAL-EMP-002058-2026-01,EMP-002058,RECALCULATE,Compared against BAND-MLE-L4-NYC-2025 which expired on 2025-12-31
-GT-000149,EXPIRED_BAND,salary_record,SAL-EMP-000592-2026-01,EMP-000592,RECALCULATE,Compared against BAND-DSC-L2-BLR-2025 which expired on 2025-12-31
-GT-000150,EXPIRED_BAND,salary_record,SAL-EMP-003629-2025-01,EMP-003629,RECALCULATE,Compared against BAND-MKM-L2-BER-2024 which expired on 2024-12-31
-GT-000151,EXPIRED_BAND,salary_record,SAL-EMP-002049-2026-01,EMP-002049,RECALCULATE,Compared against BAND-SUP-L3-SFO-2025 which expired on 2025-12-31
-GT-000152,EXPIRED_BAND,salary_record,SAL-EMP-000591-2026-01,EMP-000591,RECALCULATE,Compared against BAND-TAX-L5-BLR-2025 which expired on 2025-12-31
-GT-000153,EXPIRED_BAND,salary_record,SAL-EMP-004044-2025-01,EMP-004044,RECALCULATE,Compared against BAND-TPM-L1-BLR-2024 which expired on 2024-12-31
-GT-000154,EXPIRED_BAND,salary_record,SAL-EMP-001424-2025-01,EMP-001424,RECALCULATE,Compared against BAND-SWE-L3-BLR-2024 which expired on 2024-12-31
-GT-000155,EXPIRED_BAND,salary_record,SAL-EMP-000141-2025-01,EMP-000141,RECALCULATE,Compared against BAND-TAX-L1-BLR-2024 which expired on 2024-12-31
-GT-000156,EXPIRED_BAND,salary_record,SAL-EMP-000747-2026-01,EMP-000747,RECALCULATE,Compared against BAND-TAX-L1-HYD-2025 which expired on 2025-12-31
-GT-000157,EXPIRED_BAND,salary_record,SAL-EMP-001238-2025-01,EMP-001238,RECALCULATE,Compared against BAND-SEC-L1-SFO-2024 which expired on 2024-12-31
-GT-000158,EXPIRED_BAND,salary_record,SAL-EMP-001483-2026-01,EMP-001483,RECALCULATE,Compared against BAND-DSC-L5-BLR-2025 which expired on 2025-12-31
-GT-000159,EXPIRED_BAND,salary_record,SAL-EMP-003734-2025-01,EMP-003734,RECALCULATE,Compared against BAND-GRW-L1-BLR-2024 which expired on 2024-12-31
-GT-000160,FTE_IGNORED,salary_record,SAL-EMP-002469-2026-01,EMP-002469,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000161,FTE_IGNORED,salary_record,SAL-EMP-002507-2024-03,EMP-002507,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000162,FTE_IGNORED,salary_record,SAL-EMP-002886-2026-01,EMP-002886,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000163,FTE_IGNORED,salary_record,SAL-EMP-004635-2026-01,EMP-004635,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000164,FTE_IGNORED,salary_record,SAL-EMP-002094-2024-04,EMP-002094,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000165,FTE_IGNORED,salary_record,SAL-EMP-003766-2025-01,EMP-003766,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000166,FTE_IGNORED,salary_record,SAL-EMP-000768-2026-01,EMP-000768,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000167,FTE_IGNORED,salary_record,SAL-EMP-003331-2025-02,EMP-003331,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000168,FTE_IGNORED,salary_record,SAL-EMP-003324-2025-02,EMP-003324,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000169,FTE_IGNORED,salary_record,SAL-EMP-001603-2024-03,EMP-001603,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000170,FTE_IGNORED,salary_record,SAL-EMP-001680-2026-01,EMP-001680,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000171,FTE_IGNORED,salary_record,SAL-EMP-001390-2026-01,EMP-001390,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000172,FTE_IGNORED,salary_record,SAL-EMP-000513-2025-02,EMP-000513,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000173,FTE_IGNORED,salary_record,SAL-EMP-003870-2026-01,EMP-003870,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
-GT-000174,FTE_IGNORED,salary_record,SAL-EMP-000976-2026-01,EMP-000976,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000175,FTE_IGNORED,salary_record,SAL-EMP-003882-2026-01,EMP-003882,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
-GT-000176,FTE_IGNORED,salary_record,SAL-EMP-000704-2026-02,EMP-000704,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000177,FTE_IGNORED,salary_record,SAL-EMP-000348-2024-03,EMP-000348,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000178,FTE_IGNORED,salary_record,SAL-EMP-000492-2026-02,EMP-000492,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
-GT-000179,FTE_IGNORED,salary_record,SAL-EMP-004640-2026-02,EMP-004640,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000180,FTE_IGNORED,salary_record,SAL-EMP-000695-2026-01,EMP-000695,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
-GT-000181,FTE_IGNORED,salary_record,SAL-EMP-003900-2026-02,EMP-003900,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000182,FTE_IGNORED,salary_record,SAL-EMP-001470-2024-03,EMP-001470,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000183,FTE_IGNORED,salary_record,SAL-EMP-001442-2024-02,EMP-001442,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000184,FTE_IGNORED,salary_record,SAL-EMP-003654-2024-04,EMP-003654,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000185,FTE_IGNORED,salary_record,SAL-EMP-000133-2026-01,EMP-000133,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000186,FTE_IGNORED,salary_record,SAL-EMP-002874-2025-01,EMP-002874,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
-GT-000187,FTE_IGNORED,salary_record,SAL-EMP-001601-2026-02,EMP-001601,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000188,FTE_IGNORED,salary_record,SAL-EMP-002502-2026-01,EMP-002502,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
-GT-000189,FTE_IGNORED,salary_record,SAL-EMP-000379-2024-03,EMP-000379,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000190,FTE_IGNORED,salary_record,SAL-EMP-004135-2025-01,EMP-004135,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000191,FTE_IGNORED,salary_record,SAL-EMP-003657-2025-02,EMP-003657,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000192,FTE_IGNORED,salary_record,SAL-EMP-003439-2026-01,EMP-003439,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000193,FTE_IGNORED,salary_record,SAL-EMP-002291-2026-01,EMP-002291,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000194,FTE_IGNORED,salary_record,SAL-EMP-003195-2025-02,EMP-003195,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
-GT-000195,FTE_IGNORED,salary_record,SAL-EMP-004547-2025-02,EMP-004547,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000196,FTE_IGNORED,salary_record,SAL-EMP-002133-2024-02,EMP-002133,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000197,FTE_IGNORED,salary_record,SAL-EMP-001200-2025-01,EMP-001200,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
-GT-000198,FTE_IGNORED,salary_record,SAL-EMP-000952-2026-01,EMP-000952,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
-GT-000199,FTE_IGNORED,salary_record,SAL-EMP-001880-2024-03,EMP-001880,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
-GT-000200,FX_CONVERSION_MISSING,salary_record,SAL-EMP-002586-2026-02,EMP-002586,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
-GT-000201,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000445-2026-02,EMP-000445,RECALCULATE,Salary in INR divided by a EUR band midpoint without conversion
+GT-000009,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000408-2026-01,EMP-000408,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000010,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000421-2026-01,EMP-000421,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000011,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000489-2026-01,EMP-000489,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000012,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000514-2026-01,EMP-000514,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000013,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000597-2026-01,EMP-000597,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000014,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000620-2026-01,EMP-000620,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000015,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000649-2026-01,EMP-000649,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000016,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000658-2026-01,EMP-000658,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000017,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000702-2026-01,EMP-000702,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000018,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-000742-2026-01,EMP-000742,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000019,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000762-2026-01,EMP-000762,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000020,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000772-2026-01,EMP-000772,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000021,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000826-2026-02,EMP-000826,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000022,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000906-2026-01,EMP-000906,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000023,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000909-2026-01,EMP-000909,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000024,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-000961-2026-01,EMP-000961,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000025,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001029-2026-01,EMP-001029,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000026,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-001061-2026-01,EMP-001061,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000027,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001066-2026-02,EMP-001066,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000028,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001071-2026-02,EMP-001071,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000029,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001149-2026-01,EMP-001149,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000030,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001178-2026-01,EMP-001178,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000031,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-001322-2026-02,EMP-001322,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000032,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001338-2026-01,EMP-001338,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000033,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-001394-2026-01,EMP-001394,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000034,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-001431-2026-01,EMP-001431,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000035,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001538-2026-01,EMP-001538,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000036,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-001574-2026-01,EMP-001574,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000037,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001577-2026-01,EMP-001577,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000038,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001642-2026-01,EMP-001642,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000039,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001665-2026-01,EMP-001665,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000040,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001706-2026-01,EMP-001706,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000041,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001709-2026-01,EMP-001709,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000042,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001784-2026-01,EMP-001784,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000043,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001850-2026-01,EMP-001850,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000044,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001864-2026-01,EMP-001864,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000045,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001896-2026-01,EMP-001896,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000046,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-001899-2026-01,EMP-001899,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000047,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002039-2026-02,EMP-002039,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000048,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002047-2026-01,EMP-002047,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000049,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002078-2026-01,EMP-002078,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000050,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002143-2026-01,EMP-002143,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000051,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002147-2026-01,EMP-002147,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000052,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002166-2026-01,EMP-002166,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000053,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002169-2026-01,EMP-002169,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000054,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002179-2026-01,EMP-002179,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000055,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002282-2026-02,EMP-002282,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000056,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002305-2026-02,EMP-002305,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000057,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002416-2026-01,EMP-002416,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000058,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002423-2026-01,EMP-002423,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000059,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002453-2026-01,EMP-002453,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000060,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002494-2026-01,EMP-002494,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000061,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002573-2026-01,EMP-002573,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000062,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002617-2026-01,EMP-002617,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000063,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002708-2026-01,EMP-002708,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000064,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002737-2026-01,EMP-002737,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000065,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-002808-2026-01,EMP-002808,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000066,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002867-2026-01,EMP-002867,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000067,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-002989-2026-01,EMP-002989,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000068,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003071-2026-02,EMP-003071,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000069,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003083-2026-01,EMP-003083,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000070,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003194-2026-01,EMP-003194,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000071,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003236-2026-02,EMP-003236,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000072,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003239-2026-02,EMP-003239,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000073,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003249-2026-01,EMP-003249,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000074,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003295-2026-02,EMP-003295,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000075,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003299-2026-01,EMP-003299,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000076,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003315-2026-01,EMP-003315,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000077,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003344-2026-01,EMP-003344,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000078,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003361-2026-01,EMP-003361,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000079,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003413-2026-01,EMP-003413,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000080,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003414-2026-01,EMP-003414,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000081,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003445-2026-01,EMP-003445,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000082,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003471-2026-01,EMP-003471,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000083,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003499-2026-01,EMP-003499,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000084,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003514-2026-01,EMP-003514,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000085,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003533-2026-01,EMP-003533,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000086,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003615-2026-01,EMP-003615,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000087,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003619-2026-02,EMP-003619,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000088,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003634-2026-01,EMP-003634,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000089,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003694-2026-01,EMP-003694,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000090,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003816-2026-01,EMP-003816,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000091,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003865-2026-01,EMP-003865,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000092,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-003873-2026-01,EMP-003873,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000093,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003877-2026-02,EMP-003877,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000094,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-003910-2026-02,EMP-003910,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000095,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004035-2026-01,EMP-004035,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000096,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004134-2026-01,EMP-004134,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000097,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004141-2026-01,EMP-004141,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000098,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004187-2026-01,EMP-004187,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000099,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004191-2026-01,EMP-004191,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000100,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004200-2026-01,EMP-004200,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000101,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004244-2026-01,EMP-004244,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000102,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004251-2026-01,EMP-004251,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000103,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004252-2026-01,EMP-004252,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000104,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004287-2026-01,EMP-004287,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000105,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004332-2026-01,EMP-004332,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000106,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004361-2026-01,EMP-004361,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000107,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004467-2026-02,EMP-004467,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000108,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004626-2026-03,EMP-004626,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000109,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004648-2026-01,EMP-004648,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000110,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004651-2026-01,EMP-004651,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000111,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004744-2026-02,EMP-004744,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000112,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004780-2026-01,EMP-004780,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000113,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004793-2026-01,EMP-004793,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000114,UNEXPLAINED_OUTLIER_LOW,salary_record,SAL-EMP-004819-2026-01,EMP-004819,PROPOSE_INCREASE,Pay set low against the documented policy with no evidence record
+GT-000115,UNEXPLAINED_OUTLIER_HIGH,salary_record,SAL-EMP-004822-2026-02,EMP-004822,FLAG_FOR_REVIEW,Pay set high against the documented policy with no evidence record
+GT-000116,EXPIRED_BAND,salary_record,SAL-EMP-003853-2025-01,EMP-003853,RECALCULATE,Compared against BAND-HRB-L2-SFO-2024 which expired on 2024-12-31
+GT-000117,EXPIRED_BAND,salary_record,SAL-EMP-002266-2025-01,EMP-002266,RECALCULATE,Compared against BAND-CSM-L1-HYD-2024 which expired on 2024-12-31
+GT-000118,EXPIRED_BAND,salary_record,SAL-EMP-001360-2025-01,EMP-001360,RECALCULATE,Compared against BAND-SEN-L3-HYD-2024 which expired on 2024-12-31
+GT-000119,EXPIRED_BAND,salary_record,SAL-EMP-002712-2026-01,EMP-002712,RECALCULATE,Compared against BAND-DSC-L4-BLR-2025 which expired on 2025-12-31
+GT-000120,EXPIRED_BAND,salary_record,SAL-EMP-000246-2026-01,EMP-000246,RECALCULATE,Compared against BAND-AMG-L4-BLR-2025 which expired on 2025-12-31
+GT-000121,EXPIRED_BAND,salary_record,SAL-EMP-000477-2026-01,EMP-000477,RECALCULATE,Compared against BAND-PMG-L3-LON-2025 which expired on 2025-12-31
+GT-000122,EXPIRED_BAND,salary_record,SAL-EMP-000066-2026-01,EMP-000066,RECALCULATE,Compared against BAND-TPM-L1-NYC-2025 which expired on 2025-12-31
+GT-000123,EXPIRED_BAND,salary_record,SAL-EMP-003807-2025-01,EMP-003807,RECALCULATE,Compared against BAND-AUD-L1-BLR-2024 which expired on 2024-12-31
+GT-000124,EXPIRED_BAND,salary_record,SAL-EMP-003606-2025-01,EMP-003606,RECALCULATE,Compared against BAND-HRB-L3-SGP-2024 which expired on 2024-12-31
+GT-000125,EXPIRED_BAND,salary_record,SAL-EMP-001576-2026-01,EMP-001576,RECALCULATE,Compared against BAND-SUP-L3-HYD-2025 which expired on 2025-12-31
+GT-000126,EXPIRED_BAND,salary_record,SAL-EMP-000677-2026-02,EMP-000677,RECALCULATE,Compared against BAND-REC-L2-BER-2025 which expired on 2025-12-31
+GT-000127,EXPIRED_BAND,salary_record,SAL-EMP-003962-2025-01,EMP-003962,RECALCULATE,Compared against BAND-DSC-L4-NYC-2024 which expired on 2024-12-31
+GT-000128,EXPIRED_BAND,salary_record,SAL-EMP-001109-2026-01,EMP-001109,RECALCULATE,Compared against BAND-SWE-L3-LON-2025 which expired on 2025-12-31
+GT-000129,EXPIRED_BAND,salary_record,SAL-EMP-000963-2025-01,EMP-000963,RECALCULATE,Compared against BAND-EVT-L5-HYD-2024 which expired on 2024-12-31
+GT-000130,EXPIRED_BAND,salary_record,SAL-EMP-003165-2026-01,EMP-003165,RECALCULATE,Compared against BAND-SOP-L4-BLR-2025 which expired on 2025-12-31
+GT-000131,EXPIRED_BAND,salary_record,SAL-EMP-001356-2026-01,EMP-001356,RECALCULATE,Compared against BAND-DSC-L2-LON-2025 which expired on 2025-12-31
+GT-000132,EXPIRED_BAND,salary_record,SAL-EMP-000431-2026-01,EMP-000431,RECALCULATE,Compared against BAND-RSC-L3-NYC-2025 which expired on 2025-12-31
+GT-000133,EXPIRED_BAND,salary_record,SAL-EMP-000608-2025-01,EMP-000608,RECALCULATE,Compared against BAND-AEX-L3-LON-2024 which expired on 2024-12-31
+GT-000134,EXPIRED_BAND,salary_record,SAL-EMP-002757-2025-01,EMP-002757,RECALCULATE,Compared against BAND-DTE-L4-BLR-2024 which expired on 2024-12-31
+GT-000135,EXPIRED_BAND,salary_record,SAL-EMP-002501-2025-01,EMP-002501,RECALCULATE,Compared against BAND-PDS-L2-BLR-2024 which expired on 2024-12-31
+GT-000136,EXPIRED_BAND,salary_record,SAL-EMP-001953-2026-01,EMP-001953,RECALCULATE,Compared against BAND-GRW-L1-SGP-2025 which expired on 2025-12-31
+GT-000137,EXPIRED_BAND,salary_record,SAL-EMP-001241-2026-01,EMP-001241,RECALCULATE,Compared against BAND-TAX-L1-LON-2025 which expired on 2025-12-31
+GT-000138,EXPIRED_BAND,salary_record,SAL-EMP-001516-2025-01,EMP-001516,RECALCULATE,Compared against BAND-PMG-L5-DUB-2024 which expired on 2024-12-31
+GT-000139,EXPIRED_BAND,salary_record,SAL-EMP-002732-2026-01,EMP-002732,RECALCULATE,Compared against BAND-MLE-L3-BER-2025 which expired on 2025-12-31
+GT-000140,EXPIRED_BAND,salary_record,SAL-EMP-003911-2025-02,EMP-003911,RECALCULATE,Compared against BAND-CMP-L3-SFO-2024 which expired on 2024-12-31
+GT-000141,EXPIRED_BAND,salary_record,SAL-EMP-002755-2026-01,EMP-002755,RECALCULATE,Compared against BAND-PRC-L2-NYC-2025 which expired on 2025-12-31
+GT-000142,EXPIRED_BAND,salary_record,SAL-EMP-000570-2025-01,EMP-000570,RECALCULATE,Compared against BAND-PDS-L4-HYD-2024 which expired on 2024-12-31
+GT-000143,EXPIRED_BAND,salary_record,SAL-EMP-002122-2026-01,EMP-002122,RECALCULATE,Compared against BAND-CMP-L2-BLR-2025 which expired on 2025-12-31
+GT-000144,EXPIRED_BAND,salary_record,SAL-EMP-000610-2026-01,EMP-000610,RECALCULATE,Compared against BAND-ACC-L3-SGP-2025 which expired on 2025-12-31
+GT-000145,EXPIRED_BAND,salary_record,SAL-EMP-003748-2025-01,EMP-003748,RECALCULATE,Compared against BAND-SWE-L3-NYC-2024 which expired on 2024-12-31
+GT-000146,EXPIRED_BAND,salary_record,SAL-EMP-002115-2025-01,EMP-002115,RECALCULATE,Compared against BAND-SOP-L1-BLR-2024 which expired on 2024-12-31
+GT-000147,EXPIRED_BAND,salary_record,SAL-EMP-004166-2025-01,EMP-004166,RECALCULATE,Compared against BAND-MLE-L2-SGP-2024 which expired on 2024-12-31
+GT-000148,EXPIRED_BAND,salary_record,SAL-EMP-001462-2025-01,EMP-001462,RECALCULATE,Compared against BAND-BIA-L2-BLR-2024 which expired on 2024-12-31
+GT-000149,EXPIRED_BAND,salary_record,SAL-EMP-000146-2025-01,EMP-000146,RECALCULATE,Compared against BAND-AUD-L1-NYC-2024 which expired on 2024-12-31
+GT-000150,EXPIRED_BAND,salary_record,SAL-EMP-000765-2026-01,EMP-000765,RECALCULATE,Compared against BAND-QAE-L2-DUB-2025 which expired on 2025-12-31
+GT-000151,EXPIRED_BAND,salary_record,SAL-EMP-001275-2025-01,EMP-001275,RECALCULATE,Compared against BAND-BRD-L4-NYC-2024 which expired on 2024-12-31
+GT-000152,EXPIRED_BAND,salary_record,SAL-EMP-001528-2026-01,EMP-001528,RECALCULATE,Compared against BAND-RSC-L4-SGP-2025 which expired on 2025-12-31
+GT-000153,EXPIRED_BAND,salary_record,SAL-EMP-003843-2025-01,EMP-003843,RECALCULATE,Compared against BAND-REC-L3-HYD-2024 which expired on 2024-12-31
+GT-000154,EXPIRED_BAND,salary_record,SAL-EMP-003496-2025-01,EMP-003496,RECALCULATE,Compared against BAND-HRO-L2-BLR-2024 which expired on 2024-12-31
+GT-000155,EXPIRED_BAND,salary_record,SAL-EMP-000668-2026-01,EMP-000668,RECALCULATE,Compared against BAND-FAN-L5-LON-2025 which expired on 2025-12-31
+GT-000156,FTE_IGNORED,salary_record,SAL-EMP-001880-2026-01,EMP-001880,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000157,FTE_IGNORED,salary_record,SAL-EMP-003394-2025-01,EMP-003394,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000158,FTE_IGNORED,salary_record,SAL-EMP-002060-2024-03,EMP-002060,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000159,FTE_IGNORED,salary_record,SAL-EMP-004645-2026-01,EMP-004645,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000160,FTE_IGNORED,salary_record,SAL-EMP-004850-2026-02,EMP-004850,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000161,FTE_IGNORED,salary_record,SAL-EMP-004394-2026-02,EMP-004394,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000162,FTE_IGNORED,salary_record,SAL-EMP-003195-2025-01,EMP-003195,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000163,FTE_IGNORED,salary_record,SAL-EMP-000387-2024-03,EMP-000387,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000164,FTE_IGNORED,salary_record,SAL-EMP-001714-2026-02,EMP-001714,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000165,FTE_IGNORED,salary_record,SAL-EMP-002338-2026-01,EMP-002338,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000166,FTE_IGNORED,salary_record,SAL-EMP-003657-2025-01,EMP-003657,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
+GT-000167,FTE_IGNORED,salary_record,SAL-EMP-002386-2026-01,EMP-002386,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000168,FTE_IGNORED,salary_record,SAL-EMP-003382-2026-01,EMP-003382,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
+GT-000169,FTE_IGNORED,salary_record,SAL-EMP-002787-2026-01,EMP-002787,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000170,FTE_IGNORED,salary_record,SAL-EMP-003030-2026-02,EMP-003030,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000171,FTE_IGNORED,salary_record,SAL-EMP-003331-2026-02,EMP-003331,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
+GT-000172,FTE_IGNORED,salary_record,SAL-EMP-000264-2024-03,EMP-000264,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000173,FTE_IGNORED,salary_record,SAL-EMP-004560-2025-01,EMP-004560,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000174,FTE_IGNORED,salary_record,SAL-EMP-001388-2025-02,EMP-001388,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000175,FTE_IGNORED,salary_record,SAL-EMP-002445-2026-01,EMP-002445,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000176,FTE_IGNORED,salary_record,SAL-EMP-001212-2024-02,EMP-001212,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000177,FTE_IGNORED,salary_record,SAL-EMP-002874-2026-01,EMP-002874,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000178,FTE_IGNORED,salary_record,SAL-EMP-002144-2026-01,EMP-002144,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
+GT-000179,FTE_IGNORED,salary_record,SAL-EMP-000603-2026-02,EMP-000603,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000180,FTE_IGNORED,salary_record,SAL-EMP-001317-2026-01,EMP-001317,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000181,FTE_IGNORED,salary_record,SAL-EMP-001396-2025-01,EMP-001396,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000182,FTE_IGNORED,salary_record,SAL-EMP-000098-2025-01,EMP-000098,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000183,FTE_IGNORED,salary_record,SAL-EMP-001086-2026-01,EMP-001086,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000184,FTE_IGNORED,salary_record,SAL-EMP-001810-2026-02,EMP-001810,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000185,FTE_IGNORED,salary_record,SAL-EMP-001968-2026-02,EMP-001968,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000186,FTE_IGNORED,salary_record,SAL-EMP-001442-2024-02,EMP-001442,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000187,FTE_IGNORED,salary_record,SAL-EMP-002133-2024-03,EMP-002133,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000188,FTE_IGNORED,salary_record,SAL-EMP-000348-2026-01,EMP-000348,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000189,FTE_IGNORED,salary_record,SAL-EMP-000059-2026-01,EMP-000059,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
+GT-000190,FTE_IGNORED,salary_record,SAL-EMP-001413-2026-01,EMP-001413,RECALCULATE,Part-time pay at FTE 0.50 compared to the full-time band without dividing by FTE
+GT-000191,FTE_IGNORED,salary_record,SAL-EMP-000652-2026-03,EMP-000652,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000192,FTE_IGNORED,salary_record,SAL-EMP-003439-2024-02,EMP-003439,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
+GT-000193,FTE_IGNORED,salary_record,SAL-EMP-001854-2026-02,EMP-001854,RECALCULATE,Part-time pay at FTE 0.60 compared to the full-time band without dividing by FTE
+GT-000194,FTE_IGNORED,salary_record,SAL-EMP-004127-2026-01,EMP-004127,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000195,FTE_IGNORED,salary_record,SAL-EMP-003656-2025-01,EMP-003656,RECALCULATE,Part-time pay at FTE 0.80 compared to the full-time band without dividing by FTE
+GT-000196,FX_CONVERSION_MISSING,salary_record,SAL-EMP-003337-2025-02,EMP-003337,RECALCULATE,Salary in INR divided by a GBP band midpoint without conversion
+GT-000197,FX_CONVERSION_MISSING,salary_record,SAL-EMP-004801-2026-02,EMP-004801,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
+GT-000198,FX_CONVERSION_MISSING,salary_record,SAL-EMP-003750-2026-02,EMP-003750,RECALCULATE,Salary in GBP divided by a USD band midpoint without conversion
+GT-000199,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000989-2026-02,EMP-000989,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
+GT-000200,FX_CONVERSION_MISSING,salary_record,SAL-EMP-004119-2026-02,EMP-004119,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
+GT-000201,FX_CONVERSION_MISSING,salary_record,SAL-EMP-004079-2025-02,EMP-004079,RECALCULATE,Salary in INR divided by a GBP band midpoint without conversion
 GT-000202,FX_CONVERSION_MISSING,salary_record,SAL-EMP-001910-2024-04,EMP-001910,RECALCULATE,Salary in USD divided by a SGD band midpoint without conversion
 GT-000203,FX_CONVERSION_MISSING,salary_record,SAL-EMP-004447-2026-02,EMP-004447,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
-GT-000204,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000614-2025-02,EMP-000614,RECALCULATE,Salary in GBP divided by a EUR band midpoint without conversion
-GT-000205,FX_CONVERSION_MISSING,salary_record,SAL-EMP-002226-2026-03,EMP-002226,RECALCULATE,Salary in USD divided by a GBP band midpoint without conversion
-GT-000206,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000576-2026-02,EMP-000576,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
-GT-000207,FX_CONVERSION_MISSING,salary_record,SAL-EMP-003145-2025-02,EMP-003145,RECALCULATE,Salary in USD divided by a EUR band midpoint without conversion
-GT-000208,FX_CONVERSION_MISSING,salary_record,SAL-EMP-002809-2026-02,EMP-002809,RECALCULATE,Salary in USD divided by a GBP band midpoint without conversion
-GT-000209,FX_CONVERSION_MISSING,salary_record,SAL-EMP-003120-2025-02,EMP-003120,RECALCULATE,Salary in EUR divided by a INR band midpoint without conversion
-GT-000210,FX_CONVERSION_MISSING,salary_record,SAL-EMP-003925-2025-02,EMP-003925,RECALCULATE,Salary in SGD divided by a EUR band midpoint without conversion
-GT-000211,FX_CONVERSION_MISSING,salary_record,SAL-EMP-003547-2026-02,EMP-003547,RECALCULATE,Salary in INR divided by a EUR band midpoint without conversion
-GT-000212,FX_CONVERSION_MISSING,salary_record,SAL-EMP-002134-2026-02,EMP-002134,RECALCULATE,Salary in INR divided by a SGD band midpoint without conversion
-GT-000213,FX_CONVERSION_MISSING,salary_record,SAL-EMP-004686-2024-04,EMP-004686,RECALCULATE,Salary in SGD divided by a EUR band midpoint without conversion
-GT-000214,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000933-2024-03,EMP-000933,RECALCULATE,Salary in INR divided by a EUR band midpoint without conversion
-GT-000215,FX_CONVERSION_MISSING,salary_record,SAL-EMP-001484-2025-03,EMP-001484,RECALCULATE,Salary in INR divided by a GBP band midpoint without conversion
-GT-000216,FX_CONVERSION_MISSING,salary_record,SAL-EMP-001952-2026-02,EMP-001952,RECALCULATE,Salary in SGD divided by a INR band midpoint without conversion
-GT-000217,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000491-2026-02,EMP-000491,RECALCULATE,Salary in SGD divided by a INR band midpoint without conversion
-GT-000218,FX_CONVERSION_MISSING,salary_record,SAL-EMP-004079-2025-02,EMP-004079,RECALCULATE,Salary in INR divided by a GBP band midpoint without conversion
-GT-000219,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000427-2024-02,EMP-000427,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
-GT-000220,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000330-2025-02,EMP-000330,RECALCULATE,Salary in USD divided by a SGD band midpoint without conversion
-GT-000221,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000981-2025-02,EMP-000981,RECALCULATE,Salary in INR divided by a EUR band midpoint without conversion
-GT-000222,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000162-2025-02,EMP-000162,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
-GT-000223,FX_CONVERSION_MISSING,salary_record,SAL-EMP-001876-2026-02,EMP-001876,RECALCULATE,Salary in GBP divided by a INR band midpoint without conversion
-GT-000224,FX_CONVERSION_MISSING,salary_record,SAL-EMP-003846-2025-02,EMP-003846,RECALCULATE,Salary in INR divided by a SGD band midpoint without conversion
-GT-000225,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000008-2025-02,EMP-000008,RECALCULATE,Salary in EUR divided by a INR band midpoint without conversion
-GT-000226,FX_CONVERSION_MISSING,salary_record,SAL-EMP-004446-2024-03,EMP-004446,RECALCULATE,Salary in USD divided by a EUR band midpoint without conversion
-GT-000227,FX_CONVERSION_MISSING,salary_record,SAL-EMP-001493-2024-03,EMP-001493,RECALCULATE,Salary in USD divided by a EUR band midpoint without conversion
-GT-000228,FX_CONVERSION_MISSING,salary_record,SAL-EMP-001753-2026-03,EMP-001753,RECALCULATE,Salary in INR divided by a EUR band midpoint without conversion
-GT-000229,FX_CONVERSION_MISSING,salary_record,SAL-EMP-002125-2025-02,EMP-002125,RECALCULATE,Salary in INR divided by a GBP band midpoint without conversion
-GT-000230,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-000606-2026-02,EMP-000606,REVERSE_OR_RATIFY,Proposal ADJ-2026-000051 was applied with no APPROVED event
-GT-000231,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-001066-2026-03,EMP-001066,REVERSE_OR_RATIFY,Proposal ADJ-2026-000088 was applied with no APPROVED event
-GT-000232,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-001178-2026-02,EMP-001178,REVERSE_OR_RATIFY,Proposal ADJ-2026-000100 was applied with no APPROVED event
-GT-000233,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-001960-2026-02,EMP-001960,REVERSE_OR_RATIFY,Proposal ADJ-2026-000171 was applied with no APPROVED event
-GT-000234,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-001975-2026-02,EMP-001975,REVERSE_OR_RATIFY,Proposal ADJ-2026-000172 was applied with no APPROVED event
-GT-000235,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-002082-2026-02,EMP-002082,REVERSE_OR_RATIFY,Proposal ADJ-2026-000184 was applied with no APPROVED event
-GT-000236,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-002715-2026-02,EMP-002715,REVERSE_OR_RATIFY,Proposal ADJ-2026-000232 was applied with no APPROVED event
-GT-000237,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-002867-2026-02,EMP-002867,REVERSE_OR_RATIFY,Proposal ADJ-2026-000243 was applied with no APPROVED event
-GT-000238,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-002878-2026-02,EMP-002878,REVERSE_OR_RATIFY,Proposal ADJ-2026-000244 was applied with no APPROVED event
-GT-000239,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-003251-2026-02,EMP-003251,REVERSE_OR_RATIFY,Proposal ADJ-2026-000279 was applied with no APPROVED event
-GT-000240,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-003514-2026-02,EMP-003514,REVERSE_OR_RATIFY,Proposal ADJ-2026-000303 was applied with no APPROVED event
-GT-000241,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-003630-2026-04,EMP-003630,REVERSE_OR_RATIFY,Proposal ADJ-2026-000315 was applied with no APPROVED event
-GT-000242,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-003951-2026-03,EMP-003951,REVERSE_OR_RATIFY,Proposal ADJ-2026-000340 was applied with no APPROVED event
-GT-000243,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-004295-2026-02,EMP-004295,REVERSE_OR_RATIFY,Proposal ADJ-2026-000375 was applied with no APPROVED event
-GT-000244,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-004691-2026-02,EMP-004691,REVERSE_OR_RATIFY,Proposal ADJ-2026-000412 was applied with no APPROVED event
-GT-000245,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000509,,REGROUP,Employees from ENGINEERING and DATA grouped together with no rationale
-GT-000246,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000510,,REGROUP,Employees from MARKETING and PRODUCT grouped together with no rationale
-GT-000247,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000511,,REGROUP,Employees from ENGINEERING and FINANCE grouped together with no rationale
-GT-000248,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000512,,REGROUP,Employees from ENGINEERING and MARKETING grouped together with no rationale
-GT-000249,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000513,,REGROUP,Employees from OPERATIONS and PRODUCT grouped together with no rationale
-GT-000250,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000514,,REGROUP,Employees from PEOPLE and MARKETING grouped together with no rationale
-GT-000251,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000515,,REGROUP,Employees from DATA and FINANCE grouped together with no rationale
-GT-000252,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000516,,REGROUP,Employees from OPERATIONS and SALES grouped together with no rationale
-GT-000253,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000517,,REGROUP,Employees from PEOPLE and MARKETING grouped together with no rationale
-GT-000254,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000518,,REGROUP,Employees from OPERATIONS and MARKETING grouped together with no rationale
-GT-000255,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000519,,REGROUP,Employees from PRODUCT and SALES grouped together with no rationale
-GT-000256,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000520,,REGROUP,Employees from MARKETING and DATA grouped together with no rationale
-GT-000257,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000521,,REGROUP,Employees from MARKETING and PEOPLE grouped together with no rationale
-GT-000258,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000522,,REGROUP,Employees from OPERATIONS and PEOPLE grouped together with no rationale
-GT-000259,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000523,,REGROUP,Employees from PEOPLE and SALES grouped together with no rationale
+GT-000204,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000659-2026-02,EMP-000659,RECALCULATE,Salary in INR divided by a EUR band midpoint without conversion
+GT-000205,FX_CONVERSION_MISSING,salary_record,SAL-EMP-001603-2025-02,EMP-001603,RECALCULATE,Salary in EUR divided by a USD band midpoint without conversion
+GT-000206,FX_CONVERSION_MISSING,salary_record,SAL-EMP-003145-2025-02,EMP-003145,RECALCULATE,Salary in USD divided by a EUR band midpoint without conversion
+GT-000207,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000445-2026-02,EMP-000445,RECALCULATE,Salary in INR divided by a EUR band midpoint without conversion
+GT-000208,FX_CONVERSION_MISSING,salary_record,SAL-EMP-001489-2025-02,EMP-001489,RECALCULATE,Salary in USD divided by a EUR band midpoint without conversion
+GT-000209,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000614-2025-02,EMP-000614,RECALCULATE,Salary in GBP divided by a EUR band midpoint without conversion
+GT-000210,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000923-2025-02,EMP-000923,RECALCULATE,Salary in SGD divided by a EUR band midpoint without conversion
+GT-000211,FX_CONVERSION_MISSING,salary_record,SAL-EMP-001732-2024-03,EMP-001732,RECALCULATE,Salary in INR divided by a SGD band midpoint without conversion
+GT-000212,FX_CONVERSION_MISSING,salary_record,SAL-EMP-004117-2024-03,EMP-004117,RECALCULATE,Salary in INR divided by a GBP band midpoint without conversion
+GT-000213,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000966-2025-02,EMP-000966,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
+GT-000214,FX_CONVERSION_MISSING,salary_record,SAL-EMP-002125-2025-02,EMP-002125,RECALCULATE,Salary in INR divided by a GBP band midpoint without conversion
+GT-000215,FX_CONVERSION_MISSING,salary_record,SAL-EMP-004764-2026-02,EMP-004764,RECALCULATE,Salary in INR divided by a SGD band midpoint without conversion
+GT-000216,FX_CONVERSION_MISSING,salary_record,SAL-EMP-004418-2025-03,EMP-004418,RECALCULATE,Salary in USD divided by a EUR band midpoint without conversion
+GT-000217,FX_CONVERSION_MISSING,salary_record,SAL-EMP-001484-2025-03,EMP-001484,RECALCULATE,Salary in INR divided by a GBP band midpoint without conversion
+GT-000218,FX_CONVERSION_MISSING,salary_record,SAL-EMP-003407-2025-02,EMP-003407,RECALCULATE,Salary in EUR divided by a INR band midpoint without conversion
+GT-000219,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000085-2026-02,EMP-000085,RECALCULATE,Salary in SGD divided by a USD band midpoint without conversion
+GT-000220,FX_CONVERSION_MISSING,salary_record,SAL-EMP-002838-2024-03,EMP-002838,RECALCULATE,Salary in SGD divided by a INR band midpoint without conversion
+GT-000221,FX_CONVERSION_MISSING,salary_record,SAL-EMP-002809-2026-02,EMP-002809,RECALCULATE,Salary in USD divided by a GBP band midpoint without conversion
+GT-000222,FX_CONVERSION_MISSING,salary_record,SAL-EMP-002586-2026-02,EMP-002586,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
+GT-000223,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000661-2026-02,EMP-000661,RECALCULATE,Salary in GBP divided by a EUR band midpoint without conversion
+GT-000224,FX_CONVERSION_MISSING,salary_record,SAL-EMP-000162-2025-02,EMP-000162,RECALCULATE,Salary in INR divided by a USD band midpoint without conversion
+GT-000225,FX_CONVERSION_MISSING,salary_record,SAL-EMP-003925-2025-02,EMP-003925,RECALCULATE,Salary in SGD divided by a EUR band midpoint without conversion
+GT-000226,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-000329-2026-02,EMP-000329,REVERSE_OR_RATIFY,Proposal ADJ-2026-000040 was applied with no APPROVED event
+GT-000227,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-000562-2026-02,EMP-000562,REVERSE_OR_RATIFY,Proposal ADJ-2026-000064 was applied with no APPROVED event
+GT-000228,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-001533-2026-02,EMP-001533,REVERSE_OR_RATIFY,Proposal ADJ-2026-000171 was applied with no APPROVED event
+GT-000229,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-001616-2026-02,EMP-001616,REVERSE_OR_RATIFY,Proposal ADJ-2026-000184 was applied with no APPROVED event
+GT-000230,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-001709-2026-02,EMP-001709,REVERSE_OR_RATIFY,Proposal ADJ-2026-000195 was applied with no APPROVED event
+GT-000231,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-001797-2026-02,EMP-001797,REVERSE_OR_RATIFY,Proposal ADJ-2026-000207 was applied with no APPROVED event
+GT-000232,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-001802-2026-02,EMP-001802,REVERSE_OR_RATIFY,Proposal ADJ-2026-000208 was applied with no APPROVED event
+GT-000233,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-001985-2026-02,EMP-001985,REVERSE_OR_RATIFY,Proposal ADJ-2026-000231 was applied with no APPROVED event
+GT-000234,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-002296-2026-03,EMP-002296,REVERSE_OR_RATIFY,Proposal ADJ-2026-000268 was applied with no APPROVED event
+GT-000235,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-002428-2026-02,EMP-002428,REVERSE_OR_RATIFY,Proposal ADJ-2026-000279 was applied with no APPROVED event
+GT-000236,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-002774-2026-02,EMP-002774,REVERSE_OR_RATIFY,Proposal ADJ-2026-000315 was applied with no APPROVED event
+GT-000237,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-003847-2026-02,EMP-003847,REVERSE_OR_RATIFY,Proposal ADJ-2026-000436 was applied with no APPROVED event
+GT-000238,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-004297-2026-02,EMP-004297,REVERSE_OR_RATIFY,Proposal ADJ-2026-000496 was applied with no APPROVED event
+GT-000239,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-004379-2026-02,EMP-004379,REVERSE_OR_RATIFY,Proposal ADJ-2026-000508 was applied with no APPROVED event
+GT-000240,UNAPPROVED_ADJUSTMENT,salary_record,SAL-EMP-004519-2026-02,EMP-004519,REVERSE_OR_RATIFY,Proposal ADJ-2026-000531 was applied with no APPROVED event
+GT-000241,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000509,,REGROUP,Employees from ENGINEERING and FINANCE grouped together with no rationale
+GT-000242,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000510,,REGROUP,Employees from MARKETING and FINANCE grouped together with no rationale
+GT-000243,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000511,,REGROUP,Employees from DATA and ENGINEERING grouped together with no rationale
+GT-000244,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000512,,REGROUP,Employees from SALES and MARKETING grouped together with no rationale
+GT-000245,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000513,,REGROUP,Employees from PEOPLE and PRODUCT grouped together with no rationale
+GT-000246,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000514,,REGROUP,Employees from OPERATIONS and FINANCE grouped together with no rationale
+GT-000247,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000515,,REGROUP,Employees from ENGINEERING and MARKETING grouped together with no rationale
+GT-000248,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000516,,REGROUP,Employees from PEOPLE and OPERATIONS grouped together with no rationale
+GT-000249,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000517,,REGROUP,Employees from OPERATIONS and PEOPLE grouped together with no rationale
+GT-000250,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000518,,REGROUP,Employees from PEOPLE and MARKETING grouped together with no rationale
+GT-000251,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000519,,REGROUP,Employees from FINANCE and DATA grouped together with no rationale
+GT-000252,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000520,,REGROUP,Employees from DATA and PRODUCT grouped together with no rationale
+GT-000253,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000521,,REGROUP,Employees from PRODUCT and ENGINEERING grouped together with no rationale
+GT-000254,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000522,,REGROUP,Employees from FINANCE and PEOPLE grouped together with no rationale
+GT-000255,INCOMPARABLE_GROUP,comparable_group,GRP-2026-000523,,REGROUP,Employees from MARKETING and ENGINEERING grouped together with no rationale
+GT-000256,SYSTEMIC_DISPARITY,role,AMG,,GROUP_PAY_REVIEW,Group B pay set 10% lower than the policy at every level of this role
+GT-000257,SYSTEMIC_DISPARITY,role,DAN,,GROUP_PAY_REVIEW,Group B pay set 10% lower than the policy at every level of this role
+GT-000258,SYSTEMIC_DISPARITY,role,SOP,,GROUP_PAY_REVIEW,Group B pay set 10% lower than the policy at every level of this role

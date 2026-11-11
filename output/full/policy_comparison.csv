@@ -1,6 +1,6 @@
 parameter,estimated_by_detector,used_by_generator
-Ratio with no tenure and a rating of 3,0.8921,0.9000
-Added per year in level,0.0186,0.0200
+Ratio with no tenure and a rating of 3,0.8918,0.9000
+Added per year in level,0.0187,0.0200
 Years after which tenure stops counting,6.0000,5.0000
-Added per rating point,0.0277,0.0300
-Added per unit of documented premium,1.0181,1.0000
+Added per rating point,0.0278,0.0300
+Added per unit of documented premium,1.0184,1.0000

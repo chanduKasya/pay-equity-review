@@ -1,19 +1,19 @@
 # Validation summary (starter)
 
-101 of 101 checks passed.
+106 of 106 checks passed.
 
 | Category | Passed | Total |
 |---|---|---|
-| Primary keys | 14 | 14 |
-| Foreign keys | 25 | 25 |
-| Allowed values | 11 | 11 |
+| Primary keys | 15 | 15 |
+| Foreign keys | 26 | 26 |
+| Allowed values | 12 | 12 |
 | ID formats | 10 | 10 |
 | Date ordering | 7 | 7 |
 | Arithmetic | 7 | 7 |
 | Lifecycle | 3 | 3 |
-| Duplicates | 17 | 17 |
+| Duplicates | 18 | 18 |
 | Ground truth | 3 | 3 |
-| Coverage | 2 | 2 |
+| Coverage | 3 | 3 |
 | Exports | 2 | 2 |
 
 | Category | Check | Status | Records checked | Problems |
@@ -24,6 +24,7 @@
 | Primary keys | fx_rate: key is unique and not empty | PASS | 15 | 0 |
 | Primary keys | compensation_band: key is unique and not empty | PASS | 4800 | 0 |
 | Primary keys | employee: key is unique and not empty | PASS | 500 | 0 |
+| Primary keys | demographics: key is unique and not empty | PASS | 500 | 0 |
 | Primary keys | salary_record: key is unique and not empty | PASS | 1823 | 0 |
 | Primary keys | performance_evidence: key is unique and not empty | PASS | 1160 | 0 |
 | Primary keys | promotion: key is unique and not empty | PASS | 97 | 0 |
@@ -36,6 +37,7 @@
 | Foreign keys | compensation_band.level_id -> level.level_id | PASS | 4800 | 0 |
 | Foreign keys | compensation_band.location_id -> location.location_id | PASS | 4800 | 0 |
 | Foreign keys | employee.manager_employee_id -> employee.employee_id | PASS | 445 | 0 |
+| Foreign keys | demographics.employee_id -> employee.employee_id | PASS | 500 | 0 |
 | Foreign keys | salary_record.employee_id -> employee.employee_id | PASS | 1823 | 0 |
 | Foreign keys | salary_record.role_id -> role.role_id | PASS | 1823 | 0 |
 | Foreign keys | salary_record.level_id -> level.level_id | PASS | 1823 | 0 |
@@ -59,6 +61,7 @@
 | Foreign keys | proposal_event.proposal_id -> adjustment_proposal.proposal_id | PASS | 155 | 0 |
 | Allowed values | location.currency_code | PASS | 8 | 0 |
 | Allowed values | employee.employment_status | PASS | 500 | 0 |
+| Allowed values | demographics.demographic_group | PASS | 500 | 0 |
 | Allowed values | salary_record.change_reason | PASS | 1823 | 0 |
 | Allowed values | salary_record.fte | PASS | 1823 | 0 |
 | Allowed values | performance_evidence.evidence_type | PASS | 1160 | 0 |
@@ -101,6 +104,7 @@
 | Duplicates | fx_rate: no fully identical rows | PASS | 15 | 0 |
 | Duplicates | compensation_band: no fully identical rows | PASS | 4800 | 0 |
 | Duplicates | employee: no fully identical rows | PASS | 500 | 0 |
+| Duplicates | demographics: no fully identical rows | PASS | 500 | 0 |
 | Duplicates | salary_record: no fully identical rows | PASS | 1823 | 0 |
 | Duplicates | performance_evidence: no fully identical rows | PASS | 1160 | 0 |
 | Duplicates | promotion: no fully identical rows | PASS | 97 | 0 |
@@ -112,10 +116,11 @@
 | Duplicates | performance_evidence: one annual rating per employee per year | PASS | 1142 | 0 |
 | Duplicates | salary_record: one record per employee per date | PASS | 1823 | 0 |
 | Duplicates | adjustment_proposal: one proposal per employee per review | PASS | 40 | 0 |
-| Ground truth | no label columns or label files among the inputs | PASS | 91 | 0 |
+| Ground truth | no label columns or label files among the inputs | PASS | 93 | 0 |
 | Ground truth | every label points to one existing record, one label per record | PASS | 29 | 0 |
 | Ground truth | INCOMPARABLE_GROUP labels match groups with no rationale | PASS | 65 | 0 |
 | Coverage | 200 role/level combinations, employee count, three years of history | PASS | 4 | 0 |
 | Coverage | promotions, part-time, currency changes, all statuses and all edge cases present | PASS | 1823 | 0 |
-| Exports | SQL seed loads into SQLite, row counts match CSV, database FK check is clean | PASS | 14 | 0 |
-| Exports | JSON files parse and row counts match CSV | PASS | 14 | 0 |
+| Coverage | demographics: one row for every employee, both groups present | PASS | 500 | 0 |
+| Exports | SQL seed loads into SQLite, row counts match CSV, database FK check is clean | PASS | 15 | 0 |
+| Exports | JSON files parse and row counts match CSV | PASS | 15 | 0 |
