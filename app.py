@@ -40,6 +40,7 @@ ISSUE_NAMES = {
     "INCOMPARABLE_GROUP": "Incomparable group",
     "UNEXPLAINED_OUTLIER_LOW": "Unexplained outlier (low)",
     "UNEXPLAINED_OUTLIER_HIGH": "Unexplained outlier (high)",
+    "SYSTEMIC_DISPARITY": "Systemic disparity",
     "RATIO_MISMATCH_OTHER": "Ratio mismatch (other)",
     "ALL": "All issue types",
 }
@@ -68,7 +69,7 @@ def load_everything(scale):
         data[table["name"]] = read(os.path.join(PROJECT_FOLDER, "data", scale, "csv", table["name"] + ".csv"))
     out_folder = os.path.join(PROJECT_FOLDER, "output", scale)
     for name in ["findings", "employee_metrics", "evaluation", "validation_summary",
-                 "outlier_threshold_sweep", "evaluation_misses"]:
+                 "outlier_threshold_sweep", "evaluation_misses", "group_gap_by_role_level"]:
         data[name] = read(os.path.join(out_folder, name + ".csv"))
     data["ground_truth"] = read(os.path.join(PROJECT_FOLDER, "ground_truth", scale, "ground_truth.csv"))
     return data
@@ -80,6 +81,7 @@ def scale_is_ready(scale):
         os.path.join(PROJECT_FOLDER, "output", scale, "findings.csv"),
         os.path.join(PROJECT_FOLDER, "output", scale, "evaluation.csv"),
         os.path.join(PROJECT_FOLDER, "output", scale, "validation_summary.csv"),
+        os.path.join(PROJECT_FOLDER, "output", scale, "group_gap_by_role_level.csv"),
     ]
     for path in needed:
         if not os.path.exists(path):
@@ -376,8 +378,9 @@ def page_distribution(data):
 
     st.subheader("Distance from the expected ratio")
     st.caption("Each dot is one employee. Dots outside the dashed lines (more than "
-               + format(config.OUTLIER_THRESHOLD, ".2f") + " from expected) are flagged as unexplained outliers.")
-    names = {"": "Within tolerance", "UNEXPLAINED_OUTLIER_LOW": "Flagged low", "UNEXPLAINED_OUTLIER_HIGH": "Flagged high"}
+               + format(config.OUTLIER_THRESHOLD, ".2f") + " from expected) are flagged as unexplained outliers, unless the person is already covered by a systemic finding.")
+    names = {"": "Not flagged individually", "UNEXPLAINED_OUTLIER_LOW": "Flagged low",
+             "UNEXPLAINED_OUTLIER_HIGH": "Flagged high"}
     dots_data = view.copy()
     dots_data["Flag"] = dots_data["outlier_flag"].map(names)
     dots_data["expected"] = dots_data["expected_compa_ratio"].astype(float)
@@ -385,7 +388,7 @@ def page_distribution(data):
         x=alt.X("expected:Q", title="Expected compa-ratio from documented factors", scale=alt.Scale(zero=False)),
         y=alt.Y("residual:Q", title="Actual minus expected"),
         color=alt.Color("Flag:N", title=None,
-                        scale=alt.Scale(domain=["Within tolerance", "Flagged low", "Flagged high"],
+                        scale=alt.Scale(domain=["Not flagged individually", "Flagged low", "Flagged high"],
                                         range=[GREY, BLUE, ORANGE])),
         tooltip=[alt.Tooltip("employee_id:N", title="Employee"),
                  alt.Tooltip("compa_ratio:Q", title="Compa-ratio", format=".4f"),
@@ -402,6 +405,87 @@ def page_distribution(data):
     by_level.columns = ["Level", "Median compa-ratio", "Employees"]
     by_level["Median compa-ratio"] = by_level["Median compa-ratio"].round(4)
     st.dataframe(by_level, hide_index=True, width="stretch")
+
+
+# ----------------------------------------------------------------------
+# Page: Group comparison
+# ----------------------------------------------------------------------
+
+def page_groups(data):
+    st.title("Group comparison")
+    st.caption("Median compa-ratio of the two anonymous demographic groups, compared inside each role, "
+               "level by level. The groups are synthetic labels with no real-world meaning.")
+
+    gaps = data["group_gap_by_role_level"]
+    compared = gaps[gaps["meets_threshold"] != ""].copy()
+    flagged_roles = sorted(data["findings"][data["findings"]["issue_type"] == "SYSTEMIC_DISPARITY"]["record_id"])
+    role_names = dict(zip(data["role"]["role_id"], data["role"]["role_name"]))
+
+    st.markdown("**Rule:** a role is flagged when the same group's median is at least "
+                + format(config.SYSTEMIC_GAP_PCT, ".0f") + "% lower at " + str(config.SYSTEMIC_MIN_LEVELS)
+                + " or more levels, and at " + format(config.SYSTEMIC_MIN_LEVEL_SHARE, ".0%")
+                + " or more of the levels that had at least " + str(config.SYSTEMIC_MIN_GROUP_SIZE)
+                + " people in each group.")
+
+    if len(compared) == 0:
+        st.info("This dataset is too small to compare groups: no role and level has at least "
+                + str(config.SYSTEMIC_MIN_GROUP_SIZE) + " active employees in each group. "
+                "Switch to the full dataset in the sidebar.")
+        return
+
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Roles with enough data", number(compared["role_id"].nunique()))
+    col2.metric("Role and level pairs compared", number(len(compared)))
+    col3.metric("Roles flagged", number(len(flagged_roles)))
+
+    # One row per role: at how many levels is Group B lower by the threshold?
+    lower_group = config.DISADVANTAGED_GROUP
+    summary_rows = []
+    for role_id, rows in compared.groupby("role_id"):
+        hits = rows[(rows["meets_threshold"] == "YES") & (rows["lower_group"] == lower_group)]
+        summary_rows.append({
+            "Role": role_id + " - " + role_names[role_id],
+            "role_id": role_id,
+            "Levels with gap": len(hits),
+            "Levels compared": len(rows),
+            "Result": "Flagged" if role_id in flagged_roles else "Not flagged",
+        })
+    summary = pd.DataFrame(summary_rows).sort_values(["Levels with gap", "Role"], ascending=[False, True])
+
+    st.subheader("Levels where " + lower_group + " is at least "
+                 + format(config.SYSTEMIC_GAP_PCT, ".0f") + "% lower, by role")
+    top = summary[summary["Levels with gap"] > 0].head(15)
+    if len(top) == 0:
+        st.write("No role shows such a gap at any level.")
+    else:
+        bars = alt.Chart(top).mark_bar(cornerRadiusEnd=4, size=14).encode(
+            x=alt.X("Levels with gap:Q", title="Levels with a gap", axis=alt.Axis(tickMinStep=1),
+                    scale=alt.Scale(domain=[0, 5])),
+            y=alt.Y("Role:N", sort=list(top["Role"]), title=None,
+                    axis=alt.Axis(labelLimit=280, labelOverlap=False)),
+            color=alt.Color("Result:N", title=None,
+                            scale=alt.Scale(domain=["Flagged", "Not flagged"], range=[BLUE, GREY])),
+            tooltip=["Role:N", "Levels with gap:Q", "Levels compared:Q", "Result:N"],
+        )
+        st.altair_chart(tidy(bars, height=max(160, 26 * len(top))), width="stretch")
+        st.caption("Roles with one or two levels are expected by chance: with small groups, medians differ "
+                   "even when pay is fair. Only a gap repeated across most levels is treated as a pattern.")
+
+    st.subheader("Level by level")
+    options = list(summary["role_id"])
+    picked = st.selectbox("Role", options, format_func=lambda value: value + " - " + role_names[value])
+    detail = gaps[gaps["role_id"] == picked][["level_id", "group_1_count", "group_1_median",
+                                              "group_2_count", "group_2_median", "gap_pct",
+                                              "lower_group", "meets_threshold"]]
+    first_name = gaps["group_1"].iloc[0]
+    second_name = gaps["group_2"].iloc[0]
+    detail.columns = ["Level", first_name + " people", first_name + " median", second_name + " people",
+                      second_name + " median", "Gap %", "Lower group", "Meets threshold"]
+    st.dataframe(detail, hide_index=True, width="stretch")
+    own = data["findings"][(data["findings"]["issue_type"] == "SYSTEMIC_DISPARITY")
+                           & (data["findings"]["record_id"] == picked)]
+    for finding in own.to_dict("records"):
+        st.warning(finding["evidence"])
 
 
 # ----------------------------------------------------------------------
@@ -611,7 +695,7 @@ def main():
     scale = st.sidebar.selectbox("Dataset", scales, index=default_index,
                                  format_func=lambda value: value + " (" + format(config.SCALES[value], ",") + " employees)")
     page = st.sidebar.radio("Page", ["Overview", "Findings", "Employee", "Pay distribution",
-                                     "Proposals", "Data quality", "Calculator"])
+                                     "Group comparison", "Proposals", "Data quality", "Calculator"])
 
     st.sidebar.divider()
     if st.sidebar.button("Run the pipeline again", help="Generate, validate, detect, evaluate and check reproducibility"):
@@ -643,6 +727,8 @@ def main():
         page_employee(data)
     elif page == "Pay distribution":
         page_distribution(data)
+    elif page == "Group comparison":
+        page_groups(data)
     elif page == "Proposals":
         page_proposals(data)
     elif page == "Data quality":
