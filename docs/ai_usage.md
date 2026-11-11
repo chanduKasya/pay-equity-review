@@ -60,3 +60,4 @@ Checks I ran myself, on my own machine:
 | 2026-11-10 | Ran the stage 1 generator on my Mac | 40 roles, 5 levels, 8 locations, 15 FX rates, 4,800 bands, 200 role/level combinations |
 | 2026-11-10 | Ran `python3 src/run_all.py --scale full` on my Mac (M1, Python 3.15) | 101 of 101 checks passed, same evaluation table as the README, and 32 of 32 files matched the saved checksums |
 | 2026-11-11 | Ran the Streamlit dashboard on my Mac | The Overview page loaded with the same figures as the README |
+| 2026-11-11 | Checked the first GitHub Actions run after pushing | All three jobs (Python 3.10, 3.12, 3.13) passed the starter pipeline and the tests in 24 seconds |
