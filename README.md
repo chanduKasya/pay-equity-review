@@ -1,5 +1,7 @@
 # Pay Equity Review: synthetic data generator and anomaly detector
 
+[![Tests](https://github.com/chanduKasya/pay-equity-review/actions/workflows/test.yml/badge.svg)](https://github.com/chanduKasya/pay-equity-review/actions/workflows/test.yml)
+
 Candidate project for the YottaFlex AI recruitment drive.
 
 **The task:** compare compensation against role, level, location and documented
@@ -85,6 +87,32 @@ core project in `src/` still needs nothing beyond the standard library.
 ![Dashboard overview](docs/images/dashboard_overview.png)
 
 ![Group comparison](docs/images/dashboard_group_comparison.png)
+
+## Run with Docker
+
+If you have Docker, nothing else needs installing. The image contains
+Python 3.12, the project and the dashboard's packages.
+
+```
+docker build -t pay-equity-review .
+docker run --rm -p 8501:8501 pay-equity-review
+```
+
+Then open `http://localhost:8501`. To run the pipeline or the tests inside
+the same image instead of the dashboard:
+
+```
+docker run --rm pay-equity-review python3 src/run_all.py --scale starter
+docker run --rm pay-equity-review python3 -m pytest
+```
+
+## Continuous integration
+
+`.github/workflows/test.yml` runs on every push and pull request, on Python
+3.10, 3.12 and 3.13. Each job runs `python3 src/run_all.py --scale starter`
+(generate, validate, detect, evaluate, and the checksum comparison against
+the dataset saved in the repository) and then `pytest`. The badge at the top
+of this page shows the latest result.
 
 ## How to verify the key behaviour
 
@@ -239,6 +267,8 @@ groups, so nothing is injected or flagged there.
 ```
 src/                 all code (see docs/how_it_works.md for a guided tour)
 app.py               optional Streamlit dashboard over the results
+Dockerfile           image with the project and the dashboard
+.github/workflows/   automated run of the pipeline and tests on every push
 tests/               pytest tests
 data/<scale>/csv     input tables, one CSV per table
 data/<scale>/json    the same tables as JSON

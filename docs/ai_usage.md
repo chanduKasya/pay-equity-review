@@ -22,6 +22,7 @@ guidelines ask for honest disclosure.
 | Core pipeline | 10 | With access to the project folder: wrote the remaining generator stages, review workflow, anomaly injection, detector, evaluator, validator, reproducibility check, exports, tests and documents; ran them; made the commits | Ran the full pipeline on my Mac and compared the output with the README |
 | Estimated pay policy | 23 | Wrote `policy_fit.py` (least squares with the standard library), changed the detector to use it, added tests and updated the results | Asked for the change so the detector no longer reads the generator's constants |
 | Systemic disparity | 24 | Added the `demographics` table, the injected group pay gap, the `SYSTEMIC_DISPARITY` check, tests, a dashboard page and the documents | Identified that excluding demographics missed the purpose of a pay equity review, and specified the approach: anonymous groups, medians by level, a 5% gap repeated across levels |
+| Docker and CI | 25 | Wrote the `Dockerfile`, `.dockerignore` and the GitHub Actions workflow, and documented them | Asked for both so that another person can run and verify the project without setup |
 | Dashboard | 17-18 | Wrote `app.py` and checked that every page loads on both datasets | Ran it on my Mac |
 
 Commits made by Claude carry a `Co-Authored-By: Claude` line, so the git

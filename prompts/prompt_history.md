@@ -27,6 +27,7 @@ This file has two parts:
 | Dashboard | 17-18 | A clean, interactive Streamlit app over the results | `app.py`, running on my Mac |
 | Estimated pay policy | 23 | For the detector to estimate the pay policy from the data by regression, not read the generator's constants | `src/policy_fit.py`, updated detector, tests and results |
 | Systemic disparity | 24 | A demographics table with anonymous groups, and a detector check that flags a role when one group's median compa-ratio is consistently 5% lower | `demographics` table, `SYSTEMIC_DISPARITY` findings, a group comparison report and dashboard page |
+| Docker and CI | 25 | A Dockerfile for the dashboard and a GitHub Actions workflow that runs the pipeline and tests on every push | `Dockerfile`, `.dockerignore`, `.github/workflows/test.yml` |
 | Housekeeping | 19-22 | A single-file snapshot of the project, and a more professional presentation of this prompt log | A local snapshot file (not in the repository), and this summary section |
 
 ## Part 2: Full log
@@ -73,3 +74,4 @@ All times are IST.
 | 22 | 12:25 | "yes" (agreeing to the summary-by-phase approach, which is Part 1 of this file) |
 | 23 | 12:28 | "Update `detect.py` so it estimates the pay policy from the data rather than importing the exact constants from the generator. You can write a simple linear regression using `scikit-learn` (or a basic least-squares math function using standard library Python) to infer the impact of level tenure and rating on compa-ratio." |
 | 24 | 12:34 | "`D1` deliberately excluded gender and ethnicity to avoid sensitive data. While this is a safe default, a \"Pay Equity Review\" inherently exists to find systemic bias across protected classes, not just individual random outliers. Generate a new synthetic table for `demographics.csv` with anonymized groups (e.g., `Group A`, `Group B`). Update the detector to calculate the median compa-ratio for each group within the same job level. If Group B's median is consistently 5% lower than Group A's across multiple roles, flag this as `SYSTEMIC_DISPARITY`." |
+| 25 | 12:47 | "The YottaFlex guidelines explicitly mandate: \"Submit working, executable code. Include clear steps so another person can install dependencies, configure the project, run it, and verify key behavior. Write a simple Dockerfile that packages Python 3.10+, installs the requirements-app.txt, and exposes the Streamlit port. Add a GitHub Actions workflow (.github/workflows/test.yml) that automatically runs python3 src/run_all.py --scale starter and pytest on every push." |
