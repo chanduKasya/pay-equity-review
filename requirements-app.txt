@@ -1,0 +1,5 @@
+# Only needed for the optional dashboard (app.py).
+# The core project in src/ needs nothing beyond the Python standard library.
+streamlit>=1.50
+pandas
+altair
