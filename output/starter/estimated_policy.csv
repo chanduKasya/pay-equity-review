@@ -1,0 +1,9 @@
+parameter,estimated_value
+base_ratio,0.8785
+per_tenure_year,0.0295
+tenure_cap_years,4.0000
+per_rating_point,0.0270
+per_premium_unit,0.9769
+typical_distance,0.0251
+people_used,456.0000
+people_total,468.0000
