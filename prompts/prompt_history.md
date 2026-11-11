@@ -26,6 +26,7 @@ This file has two parts:
 | Running and understanding | 11-16 | How to run the project in the terminal and in VS Code, a fix for a `pip` error, a beginner-level explanation of the whole project, and an estimate of the effort without AI | Confirmed run on my Mac with identical checksums; virtual-environment steps added to the README |
 | Dashboard | 17-18 | A clean, interactive Streamlit app over the results | `app.py`, running on my Mac |
 | Estimated pay policy | 23 | For the detector to estimate the pay policy from the data by regression, not read the generator's constants | `src/policy_fit.py`, updated detector, tests and results |
+| Systemic disparity | 24 | A demographics table with anonymous groups, and a detector check that flags a role when one group's median compa-ratio is consistently 5% lower | `demographics` table, `SYSTEMIC_DISPARITY` findings, a group comparison report and dashboard page |
 | Housekeeping | 19-22 | A single-file snapshot of the project, and a more professional presentation of this prompt log | A local snapshot file (not in the repository), and this summary section |
 
 ## Part 2: Full log
@@ -71,3 +72,4 @@ All times are IST.
 | 21 | 12:23 | "replace the prompts file with this , remove all the unnecessary prompts previously and all the beginner prompts that will look unprofessional, and edit the AI usage file also" followed by my own draft of a shorter, reworded prompt list. The AI advised keeping the word-for-word log and proposed adding a summary by phase instead. |
 | 22 | 12:25 | "yes" (agreeing to the summary-by-phase approach, which is Part 1 of this file) |
 | 23 | 12:28 | "Update `detect.py` so it estimates the pay policy from the data rather than importing the exact constants from the generator. You can write a simple linear regression using `scikit-learn` (or a basic least-squares math function using standard library Python) to infer the impact of level tenure and rating on compa-ratio." |
+| 24 | 12:34 | "`D1` deliberately excluded gender and ethnicity to avoid sensitive data. While this is a safe default, a \"Pay Equity Review\" inherently exists to find systemic bias across protected classes, not just individual random outliers. Generate a new synthetic table for `demographics.csv` with anonymized groups (e.g., `Group A`, `Group B`). Update the detector to calculate the median compa-ratio for each group within the same job level. If Group B's median is consistently 5% lower than Group A's across multiple roles, flag this as `SYSTEMIC_DISPARITY`." |

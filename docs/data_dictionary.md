@@ -14,6 +14,7 @@ Conventions used in every table:
 | Role | CompensationBand | 1:N | |
 | Level | CompensationBand | 1:N | |
 | Location | CompensationBand | 1:N | |
+| Employee | Demographics | 1:1 | Exactly one row per employee |
 | Employee | SalaryRecord | 1:N | At least one (the HIRE or OPENING_BALANCE record) |
 | CompensationBand | SalaryRecord | 1:N | The band the source system compared against |
 | Employee | PerformanceEvidence | 1:N | Optional: new hires may have none |
@@ -94,6 +95,15 @@ ID format: `EMP-000001`.
 | employment_status | text | Y | `ACTIVE`, `TERMINATED` |
 | termination_date | date | N | Required only when TERMINATED. Must be after hire_date |
 | manager_employee_id | text | N | FK to Employee. Never the employee themself |
+
+## Demographics (master)
+
+| Field | Type | Req | Allowed values / rule |
+|---|---|---|---|
+| employee_id | text | Y | PK. FK to Employee |
+| demographic_group | text | Y | `Group A`, `Group B`. Anonymous synthetic labels with no real-world meaning |
+
+Rule: every employee has exactly one row. This table is an input (the detector needs it). It contains no labels about pay problems.
 
 ## SalaryRecord (event, append-only)
 
@@ -217,9 +227,9 @@ Allowed transitions: DRAFT -> SUBMITTED -> HR_REVIEWED -> APPROVED -> APPLIED, p
 | Field | Type | Req | Allowed values / rule |
 |---|---|---|---|
 | ground_truth_id | text | Y | PK. `GT-000001` |
-| issue_type | text | Y | `EXPIRED_BAND`, `FTE_IGNORED`, `FX_CONVERSION_MISSING`, `UNAPPROVED_ADJUSTMENT`, `INCOMPARABLE_GROUP`, `UNEXPLAINED_OUTLIER_LOW`, `UNEXPLAINED_OUTLIER_HIGH` |
+| issue_type | text | Y | `EXPIRED_BAND`, `FTE_IGNORED`, `FX_CONVERSION_MISSING`, `UNAPPROVED_ADJUSTMENT`, `INCOMPARABLE_GROUP`, `UNEXPLAINED_OUTLIER_LOW`, `UNEXPLAINED_OUTLIER_HIGH`, `SYSTEMIC_DISPARITY` |
 | table_name | text | Y | The table holding the affected record |
-| record_id | text | Y | Primary key of the affected record |
+| record_id | text | Y | Primary key of the affected record. For SYSTEMIC_DISPARITY this is the role_id |
 | employee_id | text | N | Empty for group-level issues |
-| expected_decision | text | Y | `RECALCULATE`, `REVERSE_OR_RATIFY`, `REGROUP`, `PROPOSE_INCREASE`, `FLAG_FOR_REVIEW` |
+| expected_decision | text | Y | `RECALCULATE`, `REVERSE_OR_RATIFY`, `REGROUP`, `PROPOSE_INCREASE`, `FLAG_FOR_REVIEW`, `GROUP_PAY_REVIEW` |
 | detail | text | Y | What was injected, in plain words |

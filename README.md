@@ -9,7 +9,8 @@ factors to identify unexplained disparities, on synthetic data that I generate.
 
 1. **Generates** a synthetic company: 5,000 employees, 200 role/level
    combinations, 8 locations in 5 currencies and 3 years of salary history,
-   with promotions, part-time changes and currency changes.
+   with promotions, part-time changes and currency changes. Each employee
+   also has an anonymous demographic group (`Group A` or `Group B`).
 2. **Runs the review workflow:** effective-dated bands, FTE and currency
    normalisation, compa-ratio and band position, comparable groups, and
    adjustment proposals with evidence and an approval trail.
@@ -17,8 +18,9 @@ factors to identify unexplained disparities, on synthetic data that I generate.
    ground truth folder.
 4. **Detects** the problems using only the input tables. The detector
    estimates the pay policy from the data with a regression; it is not
-   given the generator's formula.
-5. **Validates and evaluates:** 101 data-quality checks, precision and recall
+   given the generator's formula. It also compares the two demographic
+   groups inside each role to find systemic pay gaps.
+5. **Validates and evaluates:** 106 data-quality checks, precision and recall
    against the ground truth, and a same-seed reproducibility check.
 
 Everything is fully synthetic. No external or personal data is used.
@@ -46,12 +48,12 @@ also be run alone:
 | Step | Command | What it does |
 |---|---|---|
 | 1 | `python3 src/generate.py --scale full --seed 20261022` | Builds every table as CSV, JSON and SQL |
-| 2 | `python3 src/validate.py --scale full` | Runs 101 data-quality checks |
+| 2 | `python3 src/validate.py --scale full` | Runs 106 data-quality checks |
 | 3 | `python3 src/detect.py --scale full` | Finds anomalies from the input tables only |
 | 4 | `python3 src/evaluate.py --scale full` | Scores the findings against the ground truth |
 | 5 | `python3 src/reproduce.py --scale full` | Generates twice and compares checksums |
 
-Optional tests (28 tests, about one second):
+Optional tests (32 tests, about three seconds):
 
 ```
 python3 -m venv .venv
@@ -67,7 +69,8 @@ operating system or Homebrew, which refuse a plain `pip install`.
 
 A Streamlit app lets you explore the results in a browser: findings with
 their evidence, one employee's pay history, the pay distribution, proposals
-with their approval trail, the validation report and a compa-ratio calculator.
+with their approval trail, the group comparison, the validation report and
+a compa-ratio calculator.
 
 ```
 python3 -m venv .venv
@@ -81,13 +84,15 @@ core project in `src/` still needs nothing beyond the standard library.
 
 ![Dashboard overview](docs/images/dashboard_overview.png)
 
+![Group comparison](docs/images/dashboard_group_comparison.png)
+
 ## How to verify the key behaviour
 
 After `python3 src/run_all.py --scale full` you should see:
 
-- `Validation (full): 101 of 101 checks passed`
-- an evaluation table ending in `ALL  259  264  253  11  6  0.958  0.977  0.967`
-- `Reproducibility (full): 32 of 32 files identical across two runs`
+- `Validation (full): 106 of 106 checks passed`
+- an evaluation table ending in `ALL  258  263  252  11  6  0.958  0.977  0.967`
+- `Reproducibility (full): 34 of 34 files identical across two runs`
 
 The same results are saved as files:
 
@@ -109,12 +114,13 @@ The same results are saved as files:
 | level | 5 | | promotion | 1,225 |
 | location | 8 | | tenure | 5,000 |
 | fx_rate | 15 | | comparable_group | 523 |
-| compensation_band | 4,800 | | comparable_group_member | 6,657 |
-| employee | 5,000 | | adjustment_proposal | 435 |
-| salary_record | 18,617 | | proposal_event | 1,704 |
+| compensation_band | 4,800 | | comparable_group_member | 6,651 |
+| employee | 5,000 | | adjustment_proposal | 577 |
+| salary_record | 18,690 | | proposal_event | 2,236 |
+| demographics | 5,000 | | | |
 
-4,590 employees are active and 410 have left. 606 salary records are part-time,
-and 80 are paid in a different currency from their band.
+4,590 employees are active and 410 have left. 610 salary records are part-time,
+and 81 are paid in a different currency from their band.
 
 ### Detection against ground truth
 
@@ -125,9 +131,10 @@ and 80 are paid in a different currency from their band.
 | Currency conversion missing | 30 | 30 | 30 | 0 | 0 | 1.000 | 1.000 |
 | Adjustment applied without approval | 15 | 15 | 15 | 0 | 0 | 1.000 | 1.000 |
 | Incomparable roles grouped without rationale | 15 | 15 | 15 | 0 | 0 | 1.000 | 1.000 |
-| Unexplained outlier, low | 78 | 72 | 72 | 0 | 6 | 1.000 | 0.923 |
-| Unexplained outlier, high | 41 | 52 | 41 | 11 | 0 | 0.788 | 1.000 |
-| **All** | **259** | **264** | **253** | **11** | **6** | **0.958** | **0.977** |
+| Unexplained outlier, low | 76 | 70 | 70 | 0 | 6 | 1.000 | 0.921 |
+| Unexplained outlier, high | 39 | 50 | 39 | 11 | 0 | 0.780 | 1.000 |
+| Systemic disparity (per role) | 3 | 3 | 3 | 0 | 0 | 1.000 | 1.000 |
+| **All** | **258** | **263** | **252** | **11** | **6** | **0.958** | **0.977** |
 
 How to read this honestly:
 
@@ -143,8 +150,8 @@ How to read this honestly:
   their current rating predicts. They were not injected, so they count as
   false positives, but a reviewer would probably want to see them.
 - `output/full/outlier_threshold_sweep.csv` shows the trade-off. A threshold
-  of 0.07 gives 0.975 recall at 0.847 precision. A threshold of 0.10 gives
-  0.972 precision at 0.874 recall.
+  of 0.07 gives 0.974 recall at 0.848 precision. A threshold of 0.10 gives
+  0.971 precision at 0.870 recall.
 
 ### Pay policy estimated by the detector
 
@@ -156,11 +163,11 @@ it, so that real outliers do not pull the estimate towards themselves.
 
 | Parameter | Estimated by the detector | Used by the generator |
 |---|---|---|
-| Ratio with no tenure and a rating of 3 | 0.8921 | 0.9000 |
-| Added per year in level | 0.0186 | 0.0200 |
+| Ratio with no tenure and a rating of 3 | 0.8918 | 0.9000 |
+| Added per year in level | 0.0187 | 0.0200 |
 | Years after which tenure stops counting | 6 | 5 |
-| Added per rating point | 0.0277 | 0.0300 |
-| Added per unit of documented premium | 1.0181 | 1.0000 |
+| Added per rating point | 0.0278 | 0.0300 |
+| Added per unit of documented premium | 1.0184 | 1.0000 |
 
 The right-hand column is never read by the detector. `evaluate.py` prints
 it only to check the estimate. The small differences have a cause: pay was
@@ -171,10 +178,10 @@ year), and one mild outlier is missed.
 
 ### Validation
 
-101 of 101 checks pass. They cover primary keys (14), foreign keys (25),
-allowed values (11), ID formats (10), date ordering (7), arithmetic
-reconciliation (7), lifecycle transitions (3), duplicates (17), ground-truth
-separation (3), coverage (2) and exports (2).
+106 of 106 checks pass. They cover primary keys (15), foreign keys (26),
+allowed values (12), ID formats (10), date ordering (7), arithmetic
+reconciliation (7), lifecycle transitions (3), duplicates (18), ground-truth
+separation (3), coverage (3) and exports (2).
 
 The tests also damage a copy of the data on purpose (a broken foreign key, a
 duplicate key, a wrong ratio, an illegal status jump) and confirm the validator
@@ -182,8 +189,8 @@ fails each time. A validator that always passes proves nothing.
 
 ### Reproducibility
 
-Two runs with the same seed give 32 of 32 identical files (SHA-256). A run
-with a different seed changes 21 files. The 11 that stay the same are the
+Two runs with the same seed give 34 of 34 identical files (SHA-256). A run
+with a different seed changes 23 files. The 11 that stay the same are the
 fixed master tables and the SQL schema.
 
 ## The five required edge cases
@@ -198,6 +205,34 @@ fixed master tables and the SQL schema.
 
 Deliberate unexplained outliers are added as well: 2% of active employees
 are paid low and 1% high against the documented policy.
+
+## Systemic disparity across demographic groups
+
+A pay equity review also has to ask whether one group is paid less as a
+pattern, not only whether individuals are outliers. The `demographics`
+table gives every employee an anonymous label, `Group A` or `Group B`. The
+labels are synthetic and stand for no real-world category.
+
+| | |
+|---|---|
+| What is injected | In 3 of the 40 roles, Group B is paid 10% below the policy at every level (160 active employees) |
+| How it is detected | Inside each role, the two groups' median compa-ratios are compared level by level. A role is flagged as `SYSTEMIC_DISPARITY` when the same group is at least 5% lower at 3 or more levels, and at 75% or more of the levels that had at least 3 people in each group |
+| Result | All 3 affected roles found, no other role flagged |
+| Report | `output/full/group_gap_by_role_level.csv` lists every role and level with both medians and the gap |
+
+Two design points:
+
+- **One level proves little.** With about 10 people per group, medians
+  differ by 5% by chance in a few of the 198 role and level pairs. The
+  first version of the rule (3 levels only) flagged a fourth role by
+  chance. Requiring most levels to agree removed it. Across 8 different
+  seeds the final rule found 23 of 24 affected roles and flagged no others.
+- **A person is reported once.** Employees inside a flagged systemic gap are
+  listed under that finding, and are not also reported as individual low
+  outliers. They are also left out when the pay policy is estimated.
+
+The 500-employee dataset has too few people per role and level to compare
+groups, so nothing is injected or flagged there.
 
 ## Repository layout
 
@@ -237,7 +272,11 @@ prompts/             every prompt sent to an AI tool
   earlier rating is flagged as unexplained.
 - Only base salary is modelled. There is one review cycle.
 - Exchange rates are made-up yearly values.
-- No gender, ethnicity, age or names are generated (see deviation D1).
+- Demographic groups are two anonymous synthetic labels. No real gender,
+  ethnicity, age or names are generated (see D1 in the assumptions).
+- The systemic check compares medians with fixed thresholds. It is not a
+  statistical test, it needs enough people per role and level, and it
+  does not adjust for tenure or rating inside a level.
 - For employees hired before 2024, time in level is counted from hire.
 - The dashboard is read-only. It shows results and does not edit data or approve proposals.
 

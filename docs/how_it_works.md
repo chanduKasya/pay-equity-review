@@ -41,7 +41,7 @@ Those are two of the mistakes the detector looks for.
 | `date_utils.py` | Add days, months between two dates |
 | `metrics.py` | The formulas: find the band for a date, convert currency, compa-ratio, band position, expected ratio |
 | `master_data.py` | Fixed tables: 40 roles, 5 levels, 8 locations, exchange rates, 4,800 bands |
-| `employees.py` | The employee table, plus each person's starting job |
+| `employees.py` | The employee table, each person's starting job, and their anonymous demographic group |
 | `history.py` | Each employee's salary records, promotions, ratings and tenure |
 | `lookups.py` | "Latest salary / latest rating for each employee" helpers |
 | `review.py` | Comparable groups, adjustment proposals and the approval trail |
@@ -51,7 +51,7 @@ Those are two of the mistakes the detector looks for.
 | `policy_fit.py` | Estimates the pay rule from the data with a least-squares regression |
 | `detect.py` | Finds problems using only the input tables |
 | `evaluate.py` | Precision and recall against the ground truth |
-| `validate.py` | 101 data-quality checks |
+| `validate.py` | 106 data-quality checks |
 | `reproduce.py` | Generates twice and compares checksums |
 | `run_all.py` | Runs the five commands in order |
 
@@ -151,6 +151,31 @@ Three extra steps:
 On the full dataset it estimates 0.892 + 0.0186 per year (up to 6 years)
 + 0.0277 per rating point. The generator used 0.90, 0.02 (up to 5 years)
 and 0.03. Close, and found without being told.
+
+## How systemic disparity is found (`check_systemic` in `detect.py`)
+
+An individual outlier is one person paid oddly. A systemic disparity is a
+whole group paid less, where each person might look only slightly low.
+
+Every employee has a label, Group A or Group B. The labels are made up and
+mean nothing in the real world. In 3 roles the generator pays Group B 10%
+less at every level.
+
+The detector looks at one role at a time:
+
+1. For each level in the role, find the middle (median) compa-ratio of
+   Group A and of Group B.
+2. If one group's median is at least 5% lower, that level "shows a gap".
+3. If the same group is lower at 3 or more levels, and at 75% or more of
+   the levels it could compare, the role is flagged.
+
+Why not flag on one level? Think of tossing a coin 10 times. Getting 7
+heads does not mean the coin is unfair. With only about 10 people per
+group, medians can differ by 5% through luck. Luck rarely repeats at four
+or five levels in a row, so a repeated gap is a real pattern.
+
+People inside a flagged role and group are reported once, under the
+systemic finding. They are not listed again as individual outliers.
 
 ## How reproducibility works
 

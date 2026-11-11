@@ -46,13 +46,17 @@ decided and why. Anything that deviates from the brief is marked **Deviation**.
 | A16 | `recorded_compa_ratio` on a salary record represents what the upstream HR system calculated at the time. Three edge cases (expired band, FTE ignored, currency conversion missing) are injected as wrong values in this field. | This lets the anomaly live in one labelled field, without corrupting unrelated rows. The solution recomputes the correct value and compares. |
 | A17 | Anomaly labels live only in `ground_truth.csv`. No input table has an `issue_type` column. | "Never leak it into input features." |
 | A18 | Each anomalous record carries at most one injected issue. | Keeps per-issue precision and recall easy to interpret. |
+| A20 | Every employee has one anonymous demographic label, `Group A` (about 55%) or `Group B` (about 45%), in a separate `demographics` table. | A pay equity review must be able to look for group-level patterns. Anonymous labels allow that without modelling any real protected class. |
+| A21 | Systemic disparity is injected by paying Group B 10% below the policy at every level of 3 roles. The label is one ground truth row per affected role. Those employees are not also made individual outliers (A18). | The label follows directly from the rule that was applied. |
+| A22 | A role is flagged when the same group's median compa-ratio is at least 5% lower at 3 or more levels and at 75% or more of the levels with at least 3 people in each group. | "Consistently lower" needs a definition. One level alone can differ by chance. |
+| A23 | Nothing systemic is injected in the 500-employee dataset. | There are too few people per role and level to compare groups. |
 | A19 | A few custom groups mix job families but do state a rationale. These are valid and are not labelled. | They are a negative control: the detector must not flag them. |
 
 ## Deliberate exclusions
 
 | # | Decision | Reason |
 |---|---|---|
-| D1 | **Deviation:** No gender, ethnicity, age, names or other personal attributes are generated. | The brief asks for comparison against role, level, location and documented factors only. Leaving out protected attributes avoids sensitive data in a public repository. A real pay-equity study would add them under proper controls. |
+| D1 | No real gender, ethnicity, age, names or other personal attributes are generated. Demographic groups exist only as two anonymous labels (A20). | The first version left demographics out completely. That was changed because a pay equity review exists to find systemic gaps between groups. Anonymous labels make that possible while keeping anything resembling sensitive personal data out of a public repository. |
 | D2 | Bonuses, equity and benefits are out of scope. Only base salary is modelled. | Not requested, and it keeps the reconciliation checks exact. |
 | D3 | Terminated employees keep their history but are excluded from the 2026 review. | You cannot adjust the pay of someone who has left. |
 | D4 | The project uses only the Python standard library. pytest is optional, for the tests. | Nothing large to install, and fewer ways for a reviewer's setup to fail. |
