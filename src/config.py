@@ -94,3 +94,21 @@ INJECT_FX_MISSING = (30, 3)
 INJECT_UNAPPROVED = (15, 3)
 INJECT_BAD_GROUPS = (15, 3)
 VALID_CUSTOM_GROUPS = (3, 1)       # mixed groups WITH a rationale (must not be flagged)
+
+# ---------------------------------------------------------------
+# Demographic groups and systemic disparity
+# Groups are anonymous labels. They carry no real-world meaning.
+# ---------------------------------------------------------------
+DEMOGRAPHIC_GROUPS = ["Group A", "Group B"]
+SHARE_GROUP_B = 0.45
+DISADVANTAGED_GROUP = "Group B"
+SYSTEMIC_PAY_MULTIPLIER = 0.90     # in the affected roles, this group is paid 10% less
+# Number of affected roles. The minimum is 0 on purpose: with 500 employees
+# there are too few people per role and level to compare groups at all.
+INJECT_SYSTEMIC_ROLES = (3, 0)
+
+# Detection rule: within one role, compare the two groups level by level.
+SYSTEMIC_GAP_PCT = 5.0             # one group's median is at least this % lower
+SYSTEMIC_MIN_GROUP_SIZE = 3        # people needed in EACH group at a level to compare it
+SYSTEMIC_MIN_LEVELS = 3            # the gap must show at this many levels of the role
+SYSTEMIC_MIN_LEVEL_SHARE = 0.75    # ...and at this share of the levels that could be compared

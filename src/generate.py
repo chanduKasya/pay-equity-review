@@ -45,9 +45,15 @@ def build_dataset(seed, employee_count):
     rng = rand_utils.make_rng(seed, 2)
     employees, start_jobs = employees_module.build_employees(rng, employee_count, roles, levels, locations)
 
+    # ---- Stage 2b: anonymous demographic groups (own random stream) ----
+    rng = rand_utils.make_rng(seed, 7)
+    demographics, affected_roles, underpaid = employees_module.build_demographics(
+        rng, employees, start_jobs, roles, employee_count)
+
     # ---- Stage 3: salary history, promotions, performance evidence ----
     rng = rand_utils.make_rng(seed, 3)
-    result = history.build_history(rng, employees, start_jobs, levels, locations, band_lookup, rate_lookup)
+    result = history.build_history(rng, employees, start_jobs, levels, locations,
+                                   band_lookup, rate_lookup, underpaid)
     salary_records, promotions, evidence, outlier_info, final_states, salary_counters = result
 
     # ---- Stage 4: derived tenure ----
@@ -66,7 +72,7 @@ def build_dataset(seed, employee_count):
     ground_truth, unapproved_records = inject.inject_all(
         rng, employee_count, salary_records, outlier_info, snapshot, roles,
         groups, members, proposals, events, waiting_at_hr,
-        band_lookup, rate_lookup, salary_counters)
+        band_lookup, rate_lookup, salary_counters, affected_roles)
 
     # New salary records are appended. Existing ones were never removed.
     salary_records = salary_records + applied_records + unapproved_records
@@ -79,6 +85,7 @@ def build_dataset(seed, employee_count):
         "fx_rate": fx_rates,
         "compensation_band": bands,
         "employee": employees,
+        "demographics": demographics,
         "salary_record": salary_records,
         "performance_evidence": evidence,
         "promotion": promotions,

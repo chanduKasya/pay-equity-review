@@ -78,6 +78,40 @@ def build_employees(rng, employee_count, roles, levels, locations):
     return employees, start_jobs
 
 
+def build_demographics(rng, employees, start_jobs, roles, employee_count):
+    """Give every employee an anonymous group label, then choose the roles
+    in which one group is deliberately underpaid (the systemic disparity).
+
+    Returns:
+      demographics    : the table rows
+      affected_roles  : sorted list of role IDs with the injected pay gap
+      underpaid       : set of employee IDs whose pay is reduced
+    """
+    demographics = []
+    group_of = {}
+    for employee in employees:
+        if rng.random() < config.SHARE_GROUP_B:
+            group = "Group B"
+        else:
+            group = "Group A"
+        group_of[employee["employee_id"]] = group
+        demographics.append({"employee_id": employee["employee_id"], "demographic_group": group})
+
+    role_ids = []
+    for role in roles:
+        role_ids.append(role["role_id"])
+    wanted = rand_utils.scaled_count(config.INJECT_SYSTEMIC_ROLES, employee_count)
+    affected_roles = sorted(rand_utils.shuffled(rng, role_ids)[0:wanted])
+
+    underpaid = set()
+    for employee in employees:
+        employee_id = employee["employee_id"]
+        in_affected_role = start_jobs[employee_id]["role_id"] in affected_roles
+        if in_affected_role and group_of[employee_id] == config.DISADVANTAGED_GROUP:
+            underpaid.add(employee_id)
+    return demographics, affected_roles, underpaid
+
+
 def assign_managers(rng, employees, start_jobs):
     """L1-L3 report to an L4 or L5. L4 reports to an L5. L5 has no manager."""
     senior_pool = []

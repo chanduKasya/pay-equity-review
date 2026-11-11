@@ -57,6 +57,12 @@ TABLES = [
         "fks": [("manager_employee_id", "employee", "employee_id")],
     },
     {
+        "name": "demographics",
+        "columns": [("employee_id", "TEXT"), ("demographic_group", "TEXT")],
+        "pk": ["employee_id"],
+        "fks": [("employee_id", "employee", "employee_id")],
+    },
+    {
         "name": "salary_record",
         "columns": [("salary_record_id", "TEXT"), ("employee_id", "TEXT"), ("effective_date", "TEXT"),
                     ("role_id", "TEXT"), ("level_id", "TEXT"), ("location_id", "TEXT"),

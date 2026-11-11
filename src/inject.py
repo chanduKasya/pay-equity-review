@@ -24,6 +24,7 @@ DECISION = {
     "INCOMPARABLE_GROUP": "REGROUP",
     "UNEXPLAINED_OUTLIER_LOW": "PROPOSE_INCREASE",
     "UNEXPLAINED_OUTLIER_HIGH": "FLAG_FOR_REVIEW",
+    "SYSTEMIC_DISPARITY": "GROUP_PAY_REVIEW",
 }
 
 
@@ -41,7 +42,7 @@ def add_label(ground_truth, issue_type, table_name, record_id, employee_id, deta
 
 def inject_all(rng, employee_count, salary_records, outlier_info, snapshot, roles,
                groups, members, proposals, events, waiting_at_hr,
-               band_lookup, rate_lookup, salary_counters):
+               band_lookup, rate_lookup, salary_counters, affected_roles):
     ground_truth = []
     used_employees = set()
 
@@ -172,6 +173,13 @@ def inject_all(rng, employee_count, salary_records, outlier_info, snapshot, role
         add_label(ground_truth, "INCOMPARABLE_GROUP", "comparable_group", group_id, "",
                   "Employees from " + two_families[0] + " and " + two_families[1]
                   + " grouped together with no rationale")
+
+    # ---- 6. Systemic disparity (pay was reduced in history.py) ----
+    reduction = int(round((1 - config.SYSTEMIC_PAY_MULTIPLIER) * 100))
+    for role_id in affected_roles:
+        add_label(ground_truth, "SYSTEMIC_DISPARITY", "role", role_id, "",
+                  config.DISADVANTAGED_GROUP + " pay set " + str(reduction)
+                  + "% lower than the policy at every level of this role")
 
     return ground_truth, new_records
 

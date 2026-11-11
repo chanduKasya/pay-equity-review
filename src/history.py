@@ -76,7 +76,7 @@ def policy_salary(state, effective_date, band_lookup):
     return metrics.round_to_100(float(band["band_mid"]) * ratio)
 
 
-def build_history(rng, employees, start_jobs, levels, locations, band_lookup, rate_lookup):
+def build_history(rng, employees, start_jobs, levels, locations, band_lookup, rate_lookup, underpaid):
     level_rank = {}
     level_by_rank = {}
     for level in levels:
@@ -129,8 +129,12 @@ def build_history(rng, employees, start_jobs, levels, locations, band_lookup, ra
             premium_pct = premium_value
 
         # Deliberate unexplained outliers: active employees with no premium.
+        # Employees inside a systemic pay gap already carry one injected
+        # issue, so they are never also made individual outliers.
         outlier_multiplier = 1.0
-        if employee["employment_status"] == "ACTIVE" and premium_pct == 0:
+        if employee_id in underpaid:
+            outlier_multiplier = config.SYSTEMIC_PAY_MULTIPLIER
+        elif employee["employment_status"] == "ACTIVE" and premium_pct == 0:
             if outlier_roll < config.SHARE_OUTLIER_LOW:
                 outlier_multiplier = outlier_low
                 outlier_info[employee_id] = "LOW"
