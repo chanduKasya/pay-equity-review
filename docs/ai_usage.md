@@ -37,6 +37,66 @@ history shows which commits those are.
   the data to prove the validator can fail, and a test that runs the
   detector with no ground truth present.
 
+## Where I overrode the AI
+
+These are design decisions the AI made that I reversed. Each one can be
+checked against the prompt history and the commits.
+
+### 1. The detector was reading the generator's pay formula (prompt 23)
+
+**What the AI built.** The first detector compared each person's pay with an
+"expected" value computed from the same constants the generator used to
+create the data (`POLICY_BASE_RATIO` and the others in `config.py`). The AI
+had noted this in the README as a limitation and listed "estimate the policy
+from the data" under future work.
+
+**Why I changed it.** A detector that is handed the formula that produced
+the data is not being tested. The outlier scores would say little about how
+it behaves on data it does not already understand. I did not want that left
+as a footnote.
+
+**What I required.** That `detect.py` estimate the pay policy from the data
+with a regression, without importing those constants.
+
+**Result.** `src/policy_fit.py`, and a test that fails if `detect.py` ever
+refers to the policy constants again. Precision and recall stayed at 0.958
+and 0.977, which is now a meaningful result.
+
+### 2. Demographics were left out of a pay equity review (prompt 24)
+
+**What the AI built.** Assumption D1 excluded gender, ethnicity and every
+other demographic attribute, on the grounds that the brief did not name them
+and that it kept sensitive-looking data out of a public repository. The
+project could therefore only find individuals who were paid oddly.
+
+**Why I changed it.** That is a safe default, but a pay equity review exists
+to find systemic gaps between groups. A solution that cannot see groups at
+all misses the purpose of the task.
+
+**What I required.** A demographics table with anonymous groups, and a check
+that flags a role when one group's median compa-ratio is consistently 5%
+lower than the other's.
+
+**Result.** The `demographics` table, the `SYSTEMIC_DISPARITY` finding, and
+a rewritten D1. All three injected roles are found and no others are flagged.
+The exact meaning of "consistently" (3 or more levels, and 75% of the levels
+compared) was worked out by the AI after its first rule produced a false
+positive; that detail is recorded in the table below.
+
+### 3. "Run it" depended on the reader's own setup (prompt 25)
+
+**What the AI built.** Run instructions in the README, and tests that had
+only ever been run on the AI's side and on my Mac.
+
+**Why I changed it.** The guidelines ask that another person can install,
+run and verify the project. Written instructions do not prove that.
+
+**What I required.** A Dockerfile, and a GitHub Actions workflow that runs
+the pipeline and the tests on every push.
+
+**Result.** The workflow passes on Python 3.10, 3.12 and 3.13, and I checked
+the first run myself. The Docker image has been written but not yet built.
+
 ## Where AI output was wrong and how it was caught
 
 These were caught by the project's own checks during the build:
