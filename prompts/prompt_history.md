@@ -78,3 +78,7 @@ All times are IST.
 | 26 | 12:50 | "the git push went through directly , i did not do anything in git hub developer settings" |
 | 27 | 12:52 | Sent a screenshot of the first GitHub Actions run (all three jobs passed, with a Node.js deprecation warning), with no text |
 | 28 | 12:54 | "`docs/ai_usage.md` is a great start for YottaFlex's \"transparent AI use\" requirement. You can make it stronger by showcasing human critical thinking. Add a section titled \"Where I overrode the AI.\" Document a specific instance where Claude suggested a bloated architecture, a hallucinated requirement, or a poor data structure, and explain why your human judgment corrected it. For example, explain how you enforced the use of the Python standard library for the core pipeline to ensure speed and stability, rather than relying heavily on pandas." The AI wrote the section from the three decisions I actually reversed (prompts 23 to 25). It did not use the standard-library example, because that choice was the AI's own. |
+| 29 | 12:55 | "all done and everything is pushed ," |
+| 30 | 13:01 | "what to do now" |
+| 31 | 13:06 | Sent a screenshot of the GitHub Actions page showing three passing runs, with no text |
+| 32 | 13:06 | "no" (answering whether I have Docker Desktop installed) |

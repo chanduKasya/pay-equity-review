@@ -93,6 +93,10 @@ core project in `src/` still needs nothing beyond the standard library.
 If you have Docker, nothing else needs installing. The image contains
 Python 3.12, the project and the dashboard's packages.
 
+**Status: not yet built.** The Dockerfile was written but I do not have
+Docker installed, so the image has not been built or run. The non-Docker
+steps above and the GitHub Actions workflow are the tested paths.
+
 ```
 docker build -t pay-equity-review .
 docker run --rm -p 8501:8501 pay-equity-review
