@@ -11,6 +11,9 @@ It recomputes every metric from source records and reports:
   INCOMPARABLE_GROUP       mixed jobs grouped with no rationale
   UNEXPLAINED_OUTLIER_LOW / _HIGH   pay far from what documented factors predict
 
+The expected pay is NOT taken from the generator's formula. It is estimated
+from the data by a regression (see policy_fit.py).
+
 Run:  python3 src/detect.py --scale starter
 """
 
@@ -21,6 +24,7 @@ import config
 import io_utils
 import lookups
 import metrics
+import policy_fit
 import review
 
 ACTION = {
@@ -219,12 +223,20 @@ def run_detection(csv_folder):
                                             tables["role"], band_lookup, rate_lookup)
     snapshot_by_employee = lookups.index_by(snapshot, "employee_id")
 
+    # The detector does not use the generator's pay formula. It estimates the
+    # policy from the employees' own data, then replaces the expected ratio
+    # on every person with the estimated one.
+    policy = policy_fit.fit_policy(snapshot)
+    for person in snapshot:
+        person["expected_ratio"] = policy_fit.expected_ratio(
+            policy, person["level_tenure_months"], person["rating"], person["premium_pct"])
+
     findings = []
     check_salary_records(tables, band_lookup, rate_lookup, findings)
     check_adjustments(tables, findings)
     check_groups(tables, snapshot_by_employee, findings)
     metric_rows = check_outliers(tables, snapshot, rate_lookup, findings)
-    return findings, metric_rows
+    return findings, metric_rows, policy
 
 
 FINDING_COLUMNS = ["finding_id", "issue_type", "table_name", "record_id", "employee_id",
@@ -232,6 +244,10 @@ FINDING_COLUMNS = ["finding_id", "issue_type", "table_name", "record_id", "emplo
 METRIC_COLUMNS = ["employee_id", "salary_record_id", "band_id", "compa_ratio", "band_position",
                   "level_tenure_months", "rating", "premium_pct", "expected_compa_ratio", "residual",
                   "group_id", "group_size", "group_median_compa_ratio", "outlier_flag"]
+
+
+ESTIMATE_COLUMNS = ["base_ratio", "per_tenure_year", "tenure_cap_years", "per_rating_point",
+                  "per_premium_unit", "typical_distance", "people_used", "people_total"]
 
 
 def main():
@@ -243,9 +259,13 @@ def main():
 
     csv_folder = os.path.join(args.data, args.scale, "csv")
     out_folder = os.path.join(args.out, args.scale)
-    findings, metric_rows = run_detection(csv_folder)
+    findings, metric_rows, policy = run_detection(csv_folder)
     io_utils.write_csv(findings, out_folder, "findings.csv", FINDING_COLUMNS)
     io_utils.write_csv(metric_rows, out_folder, "employee_metrics.csv", METRIC_COLUMNS)
+    policy_rows = []
+    for name in ESTIMATE_COLUMNS:
+        policy_rows.append({"parameter": name, "estimated_value": format(policy[name], ".4f")})
+    io_utils.write_csv(policy_rows, out_folder, "estimated_policy.csv", ["parameter", "estimated_value"])
 
     counts = {}
     for finding in findings:
@@ -253,6 +273,11 @@ def main():
     print("Detection finished:", len(findings), "findings from", csv_folder)
     for issue_type in sorted(counts.keys()):
         print("  " + issue_type.ljust(28) + str(counts[issue_type]).rjust(6))
+    print("Estimated pay policy: base", format(policy["base_ratio"], ".4f"),
+          "| per year in level", format(policy["per_tenure_year"], ".4f"),
+          "(cap", policy["tenure_cap_years"], "years)",
+          "| per rating point", format(policy["per_rating_point"], ".4f"),
+          "| per unit of premium", format(policy["per_premium_unit"], ".4f"))
     print("Written to", out_folder)
 
 

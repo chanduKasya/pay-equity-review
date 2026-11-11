@@ -157,6 +157,27 @@ def main():
     text = text + markdown_table(rows, EVALUATION_COLUMNS) + "\n\n"
     text = text + "Recommended action matched the expected decision for " + str(correct_decisions)
     text = text + " of " + str(matched) + " correctly found issues.\n\n"
+    policy_path = os.path.join(out_folder, "estimated_policy.csv")
+    if os.path.exists(policy_path):
+        estimated = {}
+        for row in io_utils.read_csv(policy_path):
+            estimated[row["parameter"]] = row["estimated_value"]
+        documented = [
+            ("base_ratio", "Ratio with no tenure and a rating of 3", config.POLICY_BASE_RATIO),
+            ("per_tenure_year", "Added per year in level", config.POLICY_PER_TENURE_YEAR),
+            ("tenure_cap_years", "Years after which tenure stops counting", config.POLICY_TENURE_CAP_YEARS),
+            ("per_rating_point", "Added per rating point", config.POLICY_PER_RATING_POINT),
+            ("per_premium_unit", "Added per unit of documented premium", 1.0),
+        ]
+        comparison = []
+        for name, meaning, true_value in documented:
+            comparison.append({"parameter": meaning, "estimated_by_detector": estimated[name],
+                               "used_by_generator": format(true_value, ".4f")})
+        io_utils.write_csv(comparison, out_folder, "policy_comparison.csv",
+                           ["parameter", "estimated_by_detector", "used_by_generator"])
+        text = text + "## Pay policy: estimated from data against the generator's values\n\n"
+        text = text + "The detector never sees the right-hand column. It is shown here only to check the estimate.\n\n"
+        text = text + markdown_table(comparison, ["parameter", "estimated_by_detector", "used_by_generator"]) + "\n\n"
     text = text + "## Outlier threshold sweep\n\n"
     text = text + "Current threshold: " + format(config.OUTLIER_THRESHOLD, ".2f") + "\n\n"
     text = text + markdown_table(sweep, SWEEP_COLUMNS) + "\n"
